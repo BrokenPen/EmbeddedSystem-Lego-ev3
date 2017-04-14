@@ -1,4 +1,6 @@
-# Index
+# Index 
+
+# Index for the course
 
 1. [Prepare Lego EV3](#prepare-lego-ev3)
 2. [Prepare OS](#prepare-os)
@@ -15,4 +17,5 @@ license is available in the `LICENSE` file.
 
 Everyone is welcome to help!
 
-## 
+## Useful Link
+
