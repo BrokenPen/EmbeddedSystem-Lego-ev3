@@ -4,8 +4,8 @@
 ..  [TODO](#todo)
 
 1. [Hardware](./hardware.md)
-    1.[Computer](./hardware.md#READMEcomputer.md)
-    2.[Lego-ev3](./hardware.md#lego-ev3.md)
+    1. [Computer](./hardware.md#READMEcomputer.md)
+    2. [Lego-ev3](./hardware.md#lego-ev3.md)
 
 1. [Operate System](./operate-system.md)
     1. [Prepare OS](./operate-system.md#prepare-os.md)
@@ -42,5 +42,6 @@
 Only include biref concept of Embedded System.
 
 # TODO
+---
 
 maybe a todo list will help?

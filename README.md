@@ -14,13 +14,15 @@
 
 ### Lego EV3 as STEM educational tool in school
 
-[Lego mindstorms NXT[1]][lego-nxt], [Lego mindstorms EV3[2]][lego-ev3] are pouplur tools that using in school as a STEM educational tool. To teaching children how to programming via the [Lego official mindStorms program[3]][ego-mindstorms]program with [visual programming language[4]][vpl]
+[Lego mindstorms NXT[1]][lego-nxt], [Lego mindstorms EV3[2]][lego-ev3] are pouplur tools that using in school as a STEM educational tool. To teaching children how to programming via the [Lego official mindStorms program[3]][lego-mindstorms]program with [visual programming language[4]][vpl]
 
 ### Lego BOOST is coming
 
 [Lego BOOST[5]][lego-boost], is realse on Augest 2017.
 
-For the tutor who are planning to buy Lego EV3 to edcaute primary student or secondary student, please have look at new coming LEGO robot, BOOST(lego movehub) in [Lego education[5]][lego-education].
+For the tutor who are planning to buy Lego EV3 to edcaute primary student or secondary student, please have look at new coming LEGO robot, BOOST(lego movehub) in [Lego education[6]][lego-education].
+
+Link to Lego BOOST news, [link1][lego-boost-new], [link2][lego-new-boots].
 
 ### About me
 
@@ -57,14 +59,15 @@ Everyone is welcome to help!
 ## Reference
 ---
 
-	[Lego mindstorms NXT[1]](#lego-nxt) need to change to [Lego mindstorms NXT[1]][lego-nxt]
-
 [lego-nxt]: https://shop.lego.com/en-US/LEGO-MINDSTORMS-NXT-2-0-8547 
 [lego-ev3]: https://education.lego.com/en-us/middle-school/shop/products
 [lego-mindstorms]: https://www.lego.com/en-us/mindstorms/learn-to-program
 [vpl]: https://en.wikipedia.org/wiki/Visual_programming_language
 [lego-education]: https://education.lego.com
-[lego-boost]: Lego boost, https://www.lego.com/en-us/boost
+[lego-boost]: https://www.lego.com/en-us/boost
+
+[lego-boost-new]: https://www.theverge.com/ces/2017/1/4/13920762/lego-boost-robotics-programming-set-robot-cat-guitar
+[lego-new-boots]: https://www.lego.com/en-us/aboutus/news-room/2017/january/lego-boost
 
 ### For the printed document
 
@@ -74,10 +77,9 @@ Everyone is welcome to help!
 - <a name="vpl"></a> [4] Visual Programming Language, https://en.wikipedia.org/wiki/Visual_programming_language
 
 - <a name="lego-boots"></a>      [5] Lego boost, https://www.lego.com/en-us/boost
-
-- <a name="lego-education"></a>  [5] Lego education, https://education.lego.com
-- <a name="lego-boost-new"></a>  [6] Lego boost news, https://www.theverge.com/ces/2017/1/4/13920762/lego-boost-robotics-programming-set-robot-cat-guitar
-- <a name="lego-new-boots"></a>  [7] Lego new boots, https://www.lego.com/en-us/aboutus/news-room/2017/january/lego-boost
+- <a name="lego-education"></a>  [6] Lego education, https://education.lego.com
+- <a name="lego-boost-new"></a>  [7] Lego boost news, https://www.theverge.com/ces/2017/1/4/13920762/lego-boost-robotics-programming-set-robot-cat-guitar
+- <a name="lego-new-boots"></a>  [8] Lego new boots, https://www.lego.com/en-us/aboutus/news-room/2017/january/lego-boost
 
 
 ## Useful Link
