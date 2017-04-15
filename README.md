@@ -1,10 +1,10 @@
 # Index 
 
 1. [Preface](#preface)
-   1. [Lego EV3 as STEM educational tool in school](#lego-ev3-as-stem-educational-tool-in-school)
-   2. [Lego BOOST is coming](#lego-boost-is-coming)
-   3. [About me](#about-me)
-   4. [Why no maintain after May 2017](#why-no-maintain-afer-may-2017)
+    1. [Lego EV3 as STEM educational tool in school](#lego-ev3-as-stem-educational-tool-in-school)
+    2. [Lego BOOST is coming](#lego-boost-is-coming)
+    3. [About me](#about-me)
+    4. [Why no maintain after May 2017](#why-no-maintain-afer-may-2017)
 2. [Course](#course)
 2. Who is target to use this course
 3. [Index of the course](#index-of-the-course)
@@ -14,7 +14,7 @@
 
 ### Lego EV3 as STEM educational tool in school
 
-[Lego mindstorms NXT[1]](#lego-nxt), [Lego mindstorms EV3[2]](#lego-ev3) are pouplur tools that using in school as a STEM educational tool to teaching children how to programming via the [Lego official mindStorms program[3]](#mindstorms).
+[Lego mindstorms NXT[1]](#lego-nxt), [Lego mindstorms EV3[2]](#lego-ev3) are pouplur tools that using in school as a STEM educational tool. To teaching children how to programming via the [Lego official mindStorms program[3]](#lego-mindstorms) program with [visual programming language[4]](#vpl).
 
 ### Lego BOOST is coming
 
@@ -39,10 +39,7 @@ Here I not :
 
 ### Index of the course
 
-1. [Prepare Lego EV3](#prepare-lego-ev3)
-2. [Prepare OS](#prepare-os)
-3. [Prepare ev3dev](#prepare-ev3dev)
-4. [Hello World ev3dev](#hello-world-ev3dev)
+[course/README.md](./course/README.md)
 
 
 ## License
@@ -60,13 +57,16 @@ Everyone is welcome to help!
 ## Reference
 ---
 
-<a name="lego-nxt"></a>            [1] https://shop.lego.com/en-US/LEGO-MINDSTORMS-NXT-2-0-8547 
-<a name="lego-ev3"></a>	         [2] https://education.lego.com/en-us/middle-school/shop/products
 
-<a name="lego-education"></a>  [4] https://education.lego.com
-[4] https://www.theverge.com/ces/2017/1/4/13920762/lego-boost-robotics-programming-set-robot-cat-guitar
-[5] https://www.lego.com/en-us/aboutus/news-room/2017/january/lego-boost
-[6] https://www.lego.com/en-us/boost
+
+- <a name="lego-nxt"></a>        [1] Lego mindstorms NXT, https://shop.lego.com/en-US/LEGO-MINDSTORMS-NXT-2-0-8547 
+- <a name="lego-ev3"></a>        [2] Lego mindstorms EV3, https://education.lego.com/en-us/middle-school/shop/products
+- <a name="lego-mindstorms"></a> [3] Lego mindstorms, https://www.lego.com/en-us/mindstorms/learn-to-program
+- <a name="vpl"></a> [4] Visual Programming Language, https://en.wikipedia.org/wiki/Visual_programming_language
+- <a name="lego-education"></a>  [4] Lego education, https://education.lego.com
+- <a name="lego-boost-new"></a>  [4] Lego boost news, https://www.theverge.com/ces/2017/1/4/13920762/lego-boost-robotics-programming-set-robot-cat-guitar
+- <a name="lego-new-boots"></a>  [5] Lego new boots, https://www.lego.com/en-us/aboutus/news-room/2017/january/lego-boost
+- <a name="lego-boots"></a>      [6] Lego boost, https://www.lego.com/en-us/boost
 
 ## Useful Link
 ---
