@@ -14,25 +14,25 @@
 
 ### Lego EV3 as STEM educational tool in school
 
-[Lego mindstorms NXT[1]][lego-nxt], [Lego mindstorms EV3[2]][lego-ev3] are pouplur tools that using in school as a STEM educational tool. To teaching children how to programming via the [Lego official mindStorms program[3]][lego-mindstorms]program with [visual programming language[4]][vpl]
+[Lego mindstorms NXT[1]][lego-nxt], [Lego mindstorms EV3[2]][lego-ev3] are popular tools that using in school as a STEM educational tool. To teaching children how to programming via the [Lego official mindStorms program[3]][lego-mindstorms]program with [visual programming language[4]][vpl]
 
 ### Lego BOOST is coming
 
 [Lego BOOST[5]][lego-boost], is realse on Augest 2017.
 
-For the tutor who are planning to buy Lego EV3 to edcaute primary student or secondary student, please have look at new coming LEGO robot, BOOST(lego movehub) in [Lego education[6]][lego-education].
+For the tutor who is planning to buy Lego EV3 to educate the primary student or secondary student, please have look at new coming LEGO robot, BOOST(lego movehub) in [Lego education[6]][lego-education].
 
 Link to Lego BOOST news, [link1][lego-boost-new], [link2][lego-new-boots].
 
 ### About me
 
-I'm a junior student, the student who inital this project and come with the idea. 
-> Teching Embedded System with Lego ev3 not really  a good idea, but not bad for my university course assigment.
+I'm a junior student, the student who initial this project and come with the idea. 
+> Teaching Embedded System with Lego ev3 not really a good idea, but not bad for my university course assignment.
 
-Here I not :
+Here I not:
 
 - I not a fan of Lego product
-- I not promote Lego product
+- I do not promote Lego product
 - I don't own any Lego product, the Lego ev3 is own by University
 
 
@@ -48,13 +48,13 @@ Here I not :
 ---
 
 `EmbeddedSystem-Lego-ev3` is licensed under CC0 1.0 Universal. The
-license is available in the `LICENSE` file.
+the license is available in the `LICENSE` file.
 
 ## Contributing
 ---
 
 Everyone is welcome to help!
-> Before June 2017 you are helping my assigment :D
+> Before June 2017 you are helping my assignment :D
 
 ## Reference
 ---
@@ -84,4 +84,10 @@ Everyone is welcome to help!
 
 ## Useful Link
 ---
+**GitHub issues: Look into options for promoting ev3dev as an educational tool #783**
+- https://github.com/ev3dev/ev3dev/issues/783
+
+**github repo : ev3dev-curriculum**
+- https://github.com/Rosebotics/ev3dev-curriculum
+
 
