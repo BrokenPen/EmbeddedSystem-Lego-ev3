@@ -16,7 +16,7 @@ Choose the solution that come into your condition.
 
 ##### Boot from USB
 
-==The computer bios is not locked or you can boot computer from a USB device.==
+==Condition : The computer bios is not locked or you can boot computer from a USB device.==
 
 To avoid of troubleshooting in Windows OS, such as install Ethernet Driver for Lego EV3, use putty(ssh) remote access Lego EV3(ev3dev), using WinSCP(scp)...
 
@@ -30,10 +30,11 @@ The boot menu is always available at comptuer startup screen(the logo), most of 
 
 ##### Use virtual machine
 
-==The computer bios is locked or you can't boot comptuer from a USB device==
+==Condition : The computer bios is locked or you can't boot comptuer from a USB device==
 
-Download [VMware player][vmware], [Virtual box][virtualbox] install into USB memory strick also copy the binary installer into USB memory strick
+Download [VMware player][vmware], [Virtual box][virtualbox] install into USB memory strick also copy the binary installer into USB memory strick.
 Download GNU/Linux distro image.
+Install GNU/Linux into virtual machine or using a live GNU/Linux(which not install).
 
 #### For the school computer running Unix-Like OS
 
