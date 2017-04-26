@@ -52,6 +52,7 @@ Install GNU/Linux  on Notebook is the best!
 > here isn't recommend you to buy Lego EV3 but only recommend for who already have the Lego EV3
 
 [Lego mindstorm EV3 (part 31313) 350USD][lego-ev3-31313]
+
 [Rechargeable Battery (part 45501) 85USD][lego-ev3-45501]
 
 ## microSD card for Lego EV3
