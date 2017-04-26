@@ -3,12 +3,12 @@
 ..  [Approach](#approach)
 ..  [TODO](#todo)
 
-1. [Hardware](./hardware/hardware.md)
+1. [Hardware](./hardware/hardware.md#hardware)
     1. [Computer](./hardware/hardware.md#computer)
     2. [Lego-ev3](./hardware/hardware.md#lego-ev3)
 
-2. [Operate System](./operate-system/operate-system.md)
-    1. [Prepare OS](./operate-system/operate-system.md#prepare-os.md)
+2. [Operate System](./operate-system/operate-system.md#operate-system)
+    1. [Prepare OS](./operate-system/operate-system.md#prepare-os)
     2. [Prepare ev3dev](./operate-system/operate-system.md#prepare-ev3dev)
     
 3. [What is Embedded  System](./embedded-system/embedded-system.md)
