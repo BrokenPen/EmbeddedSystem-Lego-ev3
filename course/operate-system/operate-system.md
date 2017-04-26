@@ -5,8 +5,6 @@ In this section,  memtion about the OS use in this course.
 ## Prepare OS
 ---
 
-
-
 ### Chosing GNU/Linux distros
 ---
 
@@ -41,14 +39,19 @@ The release version may not same when your download but that is ok.
 ### Demo 
 Here is snapshot of demo of prepare these OS
 
-The hardware you need descript in `hardware/hardware.md`.
+Option 1: [To create bootable Linux USB](./bootable-usb.md)
+> for the school's comptuer whather installed recovery card but didn't lock the bios boot menu.
 
+Option 2: [Use VirtualBox to run Linux](./virtualbox.md)
+> for the schol's computer only can boot into the OS that installed
+
+
+
+####
+
+<!--
 > For the tutor who use VirtualBox to run Linuxmint Live CD, in Create Virtual Machine step, version use Ubuntu (64-bit) or Ubuntu (32-bit), other may not work.
-
-
-
-
-
+-->
 
 
 ## Useful Link
