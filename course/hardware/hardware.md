@@ -2,7 +2,7 @@
 
 In this section, I only mention about the hardware you may need it.
 
-The Software/OS requirement part in the `software.md`.
+The Software/OS requirement part in the [`course/operate-system/operate-system.md`](../operate-system/operate-system.md#operate-system).
 
 ## Computer
 ---
