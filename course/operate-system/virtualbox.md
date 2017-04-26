@@ -60,7 +60,7 @@ Select the one you need
 
 1). Download VirtualBox  `Windows hosts ` in https://www.virtualbox.org/wiki/Downloads
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/operate-system/virtualbox/00-download-virtualbox-windows-hosts.png) 
+![](virtualbox/00-download-virtualbox-windows-hosts.png) 
 
 ---
 
@@ -73,37 +73,37 @@ Select the one you need
 ---
 
 4). Run VirtualBox
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/operate-system/virtualbox/01-oracle-vm-virtualbox-manager.png) 
+![](virtualbox/01-oracle-vm-virtualbox-manager.png) 
 
 ---
 
 5). Click `File` -> `Preferences`, change `Default Machine Folder:`  into your USB Memory Stick. Press OK after finish
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/operate-system/virtualbox/02-virtualbox-preferences.png) 
+![](virtualbox/02-virtualbox-preferences.png) 
 
 ---
 
 6). Create Virtual Machine by clicking `New` at the main page.
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/operate-system/virtualbox/01-oracle-vm-virtualbox-manager.png) 
+![](virtualbox/01-oracle-vm-virtualbox-manager.png) 
 
 ---
 
 7). Enter the Name of the Virtual Machine and Select the `Type` to `Linux` and `Version` as `Debian (32-bit)` for `debian-live-8.7.1-i386-gnome-desktop.iso`  
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/operate-system/virtualbox/03-create-virtual-machine-01-name-and-operating-system.png) 
+![](virtualbox/03-create-virtual-machine-01-name-and-operating-system.png) 
 
 ---
 
 8). Select the Memory size for Virtual Machine use the `default` setting is ok
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/operate-system/virtualbox/04-create-virtual-machine-02-memory-size.png) 
+![](virtualbox/04-create-virtual-machine-02-memory-size.png) 
 
 ---
 
 9). Select the `default`  setting of `Create a virtual hard disk now` if you wanna install the OS or have stroage, select `Do not add a virtual hard disk`  if you wanna only wanna use a live CD GNU/Linux
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/operate-system/virtualbox/05-create-virtual-machine-03-hard-disk.png) 
+![](virtualbox/05-create-virtual-machine-03-hard-disk.png) 
 
 ---
 For Selected `Create a virtual hard disk now` in step 9, continue on step 10 to 12
@@ -111,36 +111,36 @@ For Selected `Do not add a virtual hard disk` in step 9, skip step 10 to 12
 
 10). Select `VDI (VirutalBox Disk Image)`
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/operate-system/virtualbox/06-create-virtual-hard-disk-01-hard-disk-file-type.png) 
+![](virtualbox/06-create-virtual-hard-disk-01-hard-disk-file-type.png) 
 
 11). Select proper `File location` and `size`, as your have done step 5, the `File location` should already alocate at your USE Memory Stick. Depend your USB Memory Stick size select the approach size as your wanna. 
 16GB USB select 8GB as hard disk is ok. 
 8GB USB select 4GB is fine.
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/operate-system/virtualbox/07-create-virtual-hard-disk-02-file-location-and-size.png) 
+![](virtualbox/07-create-virtual-hard-disk-02-file-location-and-size.png) 
 
 12). Select `Dynamically allocated`
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/operate-system/virtualbox/08-create-virtual-hard-disk-03-storage-on-physical-hard-disk.png) 
+![](virtualbox/08-create-virtual-hard-disk-03-storage-on-physical-hard-disk.png) 
 
 ---
 
 13). `debian 32-bit` created
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/operate-system/virtualbox/09-debian-32-bit-created.png) 
+![](virtualbox/09-debian-32-bit-created.png) 
 
 ---
 
 14). Select `File` -> `Settings` -> `Empty`(The DVD icon) -> `DVD icon`(the right size of Optical Drive:) -> `Choose Virtual Optical Disk File...` -> select `debian-live-8.7.1-i386-gnome-desktop.iso` -> Then press `OK`
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/operate-system/virtualbox/10-select-the-debian-image.png) 
+![](virtualbox/10-select-the-debian-image.png) 
 
 ---
 
 15). Back to main page, click `START`
 > You should see `Storage` -> `IDE Secondary Master:` is relate to the iamge your selected in step 14
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/operate-system/virtualbox/11-start-debian-32-bit.png) 
+![](virtualbox/11-start-debian-32-bit.png) 
 
 ---
 
@@ -149,35 +149,34 @@ If you want install the debian in your computer or virutal harddisk, select `Ins
 
 The ==scape button== of Virutal Box is show ==at the right conner== which is ==Right Ctrl== in this case
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/operate-system/virtualbox/12-debian-32-bit-running.png) 
+![](virtualbox/12-debian-32-bit-running.png) 
 
 ---
 
 17). Select `Capture` if you see this information
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/operate-system/virtualbox/13-select-capture.png) 
+![](virtualbox/13-select-capture.png) 
 
 ---
 
 18). Loaded into Debian
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/operate-system/virtualbox/14-debian.png) 
+![](virtualbox/14-debian.png) 
 
 ---
 
 19). Open terminal, click `activities` or press `super` then type `terminal`, open the `terminal`
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/operate-system/virtualbox/15-activities-terminal.png) 
+![](virtualbox/15-activities-terminal.png) 
 
 ---
 
 20). The `terminal` is all your in need this course
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/operate-system/virtualbox/16-terminal.png) 
+![](virtualbox/16-terminal.png) 
 
 ---
 
-#### Demo of usb boot
 
 
 
