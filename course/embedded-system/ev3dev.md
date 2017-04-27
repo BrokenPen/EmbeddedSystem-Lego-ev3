@@ -120,47 +120,47 @@ use `cd /tmp` switch to `/tmp` directory, so the download file won't keep it aft
 
 as your read as here, I though you already have these.
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/05-requirement.jpg) 
+![](ev3-brick/05-requirement.jpg)
 
 ## attach mircoSD into EV3
 
 1). The mircoSD card slot is locate as left side of EV3 brick
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/07-mircosd-slot.jpg){.ev3-brick}
+![](ev3-brick/07-mircosd-slot.jpg){.ev3-brick}
 
 2). insert mircoSD, the front side(logo) of mircoSD face up.
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/08-mircosd-front-on-top.jpg){.ev3-brick}
+![](ev3-brick/08-mircosd-front-on-top.jpg){.ev3-brick}
 
 3). connect EV3 brick to computer though USB cable, then press the center key(OK) to boot up EV3 brick. You should see Linux like start up screen.
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/10-attack-battery-usb-poewron.jpg){.ev3-brick}
+![](ev3-brick/10-attack-battery-usb-poewron.jpg){.ev3-brick}
 
 4). ouch, I forget attach the power cable.
 
- ![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/11-loading-ev3dev.jpg){.ev3-brick}
+ ![](ev3-brick/11-loading-ev3dev.jpg){.ev3-brick}
  
 5). ev3dev brick menu
 
- ![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/15-brick-gui-interface.jpg){.ev3-brick}
+ ![](ev3-brick/15-brick-gui-interface.jpg){.ev3-brick}
 
 ## setup EV3 network
 
 1). Enter Wireless and Networks
 
- ![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/18-select-wireless-and-networks.jpg){.ev3-brick}
+ ![](ev3-brick/18-select-wireless-and-networks.jpg){.ev3-brick}
 
 2). Enter All Network Connections
 
 <!--
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/19-wireless-and-networks.jpg) {.ev3-brick}
+![](ev3-brick/19-wireless-and-networks.jpg) {.ev3-brick}
 -->
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/20-select-all-network-connections.jpg){.ev3-brick}
+![](ev3-brick/20-select-all-network-connections.jpg){.ev3-brick}
 
 3). Enter Wired
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/21-enter-wired.jpg){.ev3-brick}
+![](ev3-brick/21-enter-wired.jpg){.ev3-brick}
 
 4). Enable Connect automatically
 
