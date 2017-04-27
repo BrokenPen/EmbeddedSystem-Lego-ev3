@@ -1,5 +1,9 @@
 <style type="text/css">
 img {
-  width: 80%;
+  width: 50%;
+}
+
+img:.ev3-brick {
+  width: 30%;
 }
 </style>
