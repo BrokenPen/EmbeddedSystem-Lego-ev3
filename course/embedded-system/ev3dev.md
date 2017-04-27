@@ -1,8 +1,20 @@
-# ev3dev
+<link rel="stylesheet" type="text/css" href="../../style.css">
 
+<style type="text/css">
+img {
+  width: 50%;
+}
+
+img.ev3-brick {
+  width: 30%;
+}
+</style>
+ 
+# ev3dev 
+ 
 In this md file is talk about how to startup ev3dev.
 
-## premise
+## premise 
 
 When you read this document, I assume you already done reading of
 
@@ -24,7 +36,7 @@ option 2 : use ==dd== utility in ==GNU/Linux==
 ![](ev3dev/01-go-to-ev3dev-downloads.jpg) 
 
 ---
-
+ 
 2). extract the zip file, assume you download store on desktop
 
 ![](ev3dev/03-extract-all-to-desktop.jpg) 
@@ -104,11 +116,156 @@ use `cd /tmp` switch to `/tmp` directory, so the download file won't keep it aft
     
 ---
 
+## requirement
+
+as your read as here, I though you already have these.
+
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/05-requirement.jpg) 
+
 ## attach mircoSD into EV3
+
+1). The mircoSD card slot is locate as left side of EV3 brick
+
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/07-mircosd-slot.jpg){.ev3-brick}
+
+2). insert mircoSD, the front side(logo) of mircoSD face up.
+
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/08-mircosd-front-on-top.jpg){.ev3-brick}
+
+3). connect EV3 brick to computer though USB cable, then press the center key(OK) to boot up EV3 brick. You should see Linux like start up screen.
+
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/10-attack-battery-usb-poewron.jpg){.ev3-brick}
+
+4). ouch, I forget attach the power cable.
+
+ ![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/11-loading-ev3dev.jpg){.ev3-brick}
+ 
+5). ev3dev brick menu
+
+ ![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/15-brick-gui-interface.jpg){.ev3-brick}
 
 ## setup EV3 network
 
-## setup coorect network ip in computer
+1). Enter Wireless and Networks
+
+ ![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/18-select-wireless-and-networks.jpg){.ev3-brick}
+
+2). Enter All Network Connections
+
+<!--
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/19-wireless-and-networks.jpg) {.ev3-brick}
+-->
+
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/20-select-all-network-connections.jpg){.ev3-brick}
+
+3). Enter Wired
+
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/21-enter-wired.jpg){.ev3-brick}
+
+4). Enable Connect automatically
+
+Default as disable
+
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/22-select-connect-automatically.jpg){.ev3-brick}
+
+Now enabled
+
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/23-auto-enabled.jpg){.ev3-brick}
+
+5). Enter IPv4
+
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/25-select-ipv4.jpg){.ev3-brick}
+
+6). Enter Change...
+
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/26-change-the-configure.jpg){.ev3-brick}
+
+7). Select Load Linux defaults
+
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/28-local-linux-default.jpg){.ev3-brick}
+
+8). The Linux defaults config
+
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/30-network-interface.jpg){.ev3-brick}
+
+9). RETURN, enter DNS
+
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/33-select-dns.jpg){.ev3-brick}
+
+10). Select Add
+
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/34-add-new-dns.jpg){.ev3-brick}
+
+11). OK, 
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/35-enter-new-dns.jpg){.ev3-brick}
+
+12). Type in 8.8.8.8, then select OK
+
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/36-enter-google-dns-8.8.8.8.jpg){.ev3-brick}
+
+13). Select Add
+
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/37-select-add.jpg){.ev3-brick}
+
+<!--
+14). Select ENET
+
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/40-browsing-enet.jpg) 
+
+15). ENET result
+
+![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/41-enet-result.jpg) 
+-->
+## setup correct network ip in computer
+
+1). open your terminal, type sudo ifconfig usb0 10.42.0.1
+
+     sudo ifconfig usb0 10.42.0.1
+     
+troubleshooting, type sudo ifconfig to see usb0, usb1 exist or not
+
+## ev3dev connecting to the Internet via usb
+
+code/ev3dev-connecting-to-the-internet/via-usb.sh
+
+1). 
+
+create a empty file call via-usb.sh in code user code direcotry
+
+    cd ~
+    mkdir code
+    cd code
+    touch via-usb.sh
+    
+use geany IDE to edit via-usb.sh
+    
+    geany via-usb.sh
+
+type the follow code in the file, CRTL+S to save the content, ALT+F4 to quit geany.
+
+caution: if computer access Internet via WiFi, change eth0 to wlan0 in line 3.
+    
+    #!/bin/sh
+    ifconfig usb0 10.42.0.1
+    iptables --table nat --append POSTROUTING --out-interface eth0 -j MASQUERADE
+    iptables --append FORWARD --in-interface usb0 -j ACCEPT
+    echo 1 > /proc/sys/net/ipv4/ip_forward
+    
+gain execute pressmission to the via-usb.sh 
+
+    chmod +x via-sub.sh
+    
+execute the via-usb.sh with priilage right
+
+    sudo ./via-sub.sh
+
+## ev3dev connecting to the Internet via WiFi adapter
+
+code/ev3dev-connecting-to-the-internet/via-wifi-adapter
+
+// TODO
+
+1). attach WiFi adapter to ev3-brick USB port, using the ev3dev brick menu config wireless connection
 
 ## access ev3dev through ssh
 
