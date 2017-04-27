@@ -166,55 +166,55 @@ as your read as here, I though you already have these.
 
 Default as disable
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/22-select-connect-automatically.jpg){.ev3-brick}
+![](ev3-brick/22-select-connect-automatically.jpg){.ev3-brick}
 
 Now enabled
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/23-auto-enabled.jpg){.ev3-brick}
+![](ev3-brick/23-auto-enabled.jpg){.ev3-brick}
 
 5). Enter IPv4
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/25-select-ipv4.jpg){.ev3-brick}
+![](ev3-brick/25-select-ipv4.jpg){.ev3-brick}
 
 6). Enter Change...
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/26-change-the-configure.jpg){.ev3-brick}
+![](ev3-brick/26-change-the-configure.jpg){.ev3-brick}
 
 7). Select Load Linux defaults
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/28-local-linux-default.jpg){.ev3-brick}
+![](ev3-brick/28-local-linux-default.jpg){.ev3-brick}
 
 8). The Linux defaults config
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/30-network-interface.jpg){.ev3-brick}
+![](ev3-brick/30-network-interface.jpg){.ev3-brick}
 
 9). RETURN, enter DNS
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/33-select-dns.jpg){.ev3-brick}
+![](ev3-brick/33-select-dns.jpg){.ev3-brick}
 
 10). Select Add
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/34-add-new-dns.jpg){.ev3-brick}
+![](ev3-brick/34-add-new-dns.jpg){.ev3-brick}
 
 11). OK, 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/35-enter-new-dns.jpg){.ev3-brick}
+![](ev3-brick/35-enter-new-dns.jpg){.ev3-brick}
 
 12). Type in 8.8.8.8, then select OK
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/36-enter-google-dns-8.8.8.8.jpg){.ev3-brick}
+![](ev3-brick/36-enter-google-dns-8.8.8.8.jpg){.ev3-brick}
 
 13). Select Add
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/37-select-add.jpg){.ev3-brick}
+![](ev3-brick/37-select-add.jpg){.ev3-brick}
 
 <!--
 14). Select ENET
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/40-browsing-enet.jpg) 
+![](ev3-brick/40-browsing-enet.jpg) 
 
 15). ENET result
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/ev3-brick/41-enet-result.jpg) 
+![](ev3-brick/41-enet-result.jpg) 
 -->
 ## setup correct network ip in computer
 
