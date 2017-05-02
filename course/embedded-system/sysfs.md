@@ -153,15 +153,16 @@ Execute the shell script thougth defined execute wrapper.
 ### ev3dev assigment 1 
 
 Assigment : Blink LEDs in order by Shell Script 
+     
+- LED1 = ev3:left:green:ev3dev
+- LED2 = ev3:left:red:ev3dev
+- LED3 = ev3:right:green:ev3dev
+- LED4 = ev3:right:red:ev3dev
 
-LED1 = ev3:left:green:ev3dev
-LED2 = ev3:left:red:ev3dev
-LED3 = ev3:right:green:ev3dev
-LED4 = ev3:right:red:ev3dev
 
+- LED4 -> LED3 -> LED2 -> LED1 ->
+- LED1 -> LED2 -> LED3 -> LED4
 
-LED4 -> LED3 -> LED2 -> LED1 ->
-LED1 -> LED2 -> LED3 -> LED4
 
 each blink with 1 second dealy, blink is 0.5s on then 0.5s off.
       
@@ -172,14 +173,14 @@ each blink with 1 second dealy, blink is 0.5s on then 0.5s off.
 
 Assigment : Blink LEDs in order by C Programming Language
      
-LED1 = ev3:left:green:ev3dev
-LED2 = ev3:left:red:ev3dev
-LED3 = ev3:right:green:ev3dev
-LED4 = ev3:right:red:ev3dev
+- LED1 = ev3:left:green:ev3dev
+- LED2 = ev3:left:red:ev3dev
+- LED3 = ev3:right:green:ev3dev
+- LED4 = ev3:right:red:ev3dev
 
 
-LED4 -> LED3 -> LED2 -> LED1 ->
-LED1 -> LED2 -> LED3 -> LED4
+- LED4 -> LED3 -> LED2 -> LED1 ->
+- LED1 -> LED2 -> LED3 -> LED4
 
 each blink with 1 second dealy, blink is 0.5s on then 0.5s off. 
 
