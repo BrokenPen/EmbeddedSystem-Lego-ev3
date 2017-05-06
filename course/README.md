@@ -13,18 +13,12 @@
     
 3. [What is Embedded  System](./embedded-system.md)
 
-4. [Prepare Lego EV3](./prepare-lego-ev3.md)
-
-5. [Prepare OS](./prepare-os.md)
-
-6. [Prepare ev3dev](./prepare-ev3dev.md)
-
 7. [Hello World ev3dev](./hello-world-ev3dev.md)
     1. [connect ev3 via usb cable]
     2. [setup ev3 blick network]
     3. [ssh](./hello-world-ev3dev.md#ssh)
     
-5. [sysfc](./sysfc..md)
+5. [sysfc](./embedded-system/sysfc.md)
     
 5. [Programming](./programming.md)
     1. [shell-script](./programming.md#shell-script)
