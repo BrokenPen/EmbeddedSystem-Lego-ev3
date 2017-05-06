@@ -13,9 +13,9 @@ assume after reading of `sysfs.md
 
 ### power supply
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/sysfs/47-sysfs-power-supply-battery-01.png) 
+![](sysfs/47-sysfs-power-supply-battery-01.png) 
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/sysfs/48-sysfs-power-supply-battery-02.png) 
+![](./sysfs/48-sysfs-power-supply-battery-02.png) 
 
 ---
 
@@ -23,29 +23,39 @@ assume after reading of `sysfs.md
 
 set time as trigger to led
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/sysfs/20-sysfs-leds-trigger-01.png) 
+![](./sysfs/20-sysfs-leds-trigger-01.png) 
 
 set no trigger to led
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/sysfs/21-sysfs-leds-trigger-02.png) 
+![](./sysfs/21-sysfs-leds-trigger-02.png) 
 
 ###  tacho metor
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/sysfs/60-sysfs-tacho-motor.png) 
+current attach 1 motor
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/sysfs/63-sysfs-tacho-motor-atitube.png) 
+![](./sysfs/60-sysfs-tacho-motor.png) 
+
+attach few more
+
+![](./sysfs/75-sysfs-tacho-motorss.png) 
+
+![](./sysfs/63-sysfs-tacho-motor-atitube.png) 
 
 reset position, scoll the motor and cat the position 
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/sysfs/65-sysfs-tacho-motor-cat-position.png) 
+![](./sysfs/65-sysfs-tacho-motor-cat-position.png) 
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/sysfs/67-sysfs-tacho-motor-commands.png) 
+![](./sysfs/67-sysfs-tacho-motor-commands.png) 
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/sysfs/69-sysfs-tacho-motor-info.png) 
+![](./sysfs/69-sysfs-tacho-motor-info.png) 
 
 reset motor by command
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/sysfs/73-sysfs-tacho-motor-reset.png) 
+![](./sysfs/73-sysfs-tacho-motor-reset.png) 
+
+### lego sensor
+
+
 
 ---
 Saturday, 06. May 2017 05:42PM 

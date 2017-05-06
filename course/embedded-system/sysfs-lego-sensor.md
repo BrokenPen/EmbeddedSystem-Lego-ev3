@@ -1,4 +1,4 @@
-# lego-sensor
+# sysfs lego sensor
 
 MINDSTORMS Compatible Sensors
      
@@ -16,8 +16,8 @@ MINDSTORMS Compatible Sensors
      cd /sys/class/lego-sensor/
      ls 
 
-![](./lego-sensor/01-connected-sensor.jpg)
-![](./lego-sensor/03-sys-class-lego-sensor.png)
+![](./sysfs-lego-sensor/01-connected-sensor.jpg)
+![](./sysfs-lego-sensor/03-sys-class-lego-sensor.png)
 
 ---
 
@@ -29,7 +29,7 @@ let check  sensor0
      ls
      grep "" *
      
-![](./lego-sensor/07-sys-class-lego-sensor-sensor0-in4-ev3--touch.png)
+![](./sysfs-lego-sensor/07-sys-class-lego-sensor-sensor0-in4-ev3--touch.png)
 
 arrocding to the `driver_name`, this sensor is `lego-ev3-touch` attach on `in4`, in `TOUCH` `mode` as `value`:`0` which mean pull up.
 
@@ -43,7 +43,7 @@ let check sensor1
      ls
      grep "" *
      
-![](./lego-sensor/09-sys-class-lego-sensor-sensor1-in3-ev3-gyro.png)
+![](./sysfs-lego-sensor/09-sys-class-lego-sensor-sensor1-in3-ev3-gyro.png)
 
 arrocding to the `driver_name`, this sensor is `lego-ev3-gyro` attach on `in3`, in `GYRO-ANG` `mode` as `value`:`-8` which mean negative 8 degree.
 
@@ -57,7 +57,7 @@ let check sensor2
      ls
      grep "" *
      
-![](./lego-sensor/11-sys-class-lego-sensor-sensor2-ev3-color.png)
+![](./sysfs-lego-sensor/11-sys-class-lego-sensor-sensor2-ev3-color.png)
 
 arrocidng to the `driver_name`, this sensor is `lego-ev3-color` attach on `in2`, in `COLOR-REFLECT` `mode` as `value`:`1` and `unit` as `pict`
 
@@ -72,7 +72,7 @@ let check sensor3
     ls
     grep "" *
     
-![](./lego-sensor/13-sys-class-lego-sensor-sensor3-ev3-us.png)
+![](./sysfs-lego-sensor/13-sys-class-lego-sensor-sensor3-ev3-us.png)
 
 arrocding to the `driver_name`, this sensor is `lego-ev3-us` which mean ultrasound sensor attach on `in1`, in `US-DIST-CM` `mode` as `value`: `2550` which mean nothing in front of the sensor. `2550` is the maximum value...
 
@@ -82,24 +82,30 @@ arrocding to the `driver_name`, this sensor is `lego-ev3-us` which mean ultrasou
 
 change gyro sensor in different mode, change to gyro-cal
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/picture/lego-sensor/31-sys-class-lego-sensor-gyro-cal.png) 
+![](./sysfs-lego-sensor/31-sys-class-lego-sensor-gyro-cal.png) 
 
 change mode to gyro-rate
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/picture/lego-sensor/33-sys-class-lego-sensor-gyro-rate.png) 
+![](./sysfs-lego-sensor/33-sys-class-lego-sensor-gyro-rate.png) 
 
 change mode 
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/picture/lego-sensor/35-sys-class-lego-sensor-gyro-all-01.png) 
+![](./sysfs-lego-sensor/35-sys-class-lego-sensor-gyro-all-01.png) 
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/picture/lego-sensor/37-sys-class-lego-sensor-gyro-all-02.png) 
+![](./sysfs-lego-sensor/37-sys-class-lego-sensor-gyro-all-02.png) 
 
 
 
 #### ultrasound sensor
 
+![](./sysfs-lego-sensor/53-try-us-sensor-close-smaller-far-larger.png) 
+
 #### color sensor
 
+![](./sysfs-lego-sensor/61-try-clolr-sensor-col-reflect.png) 
+
+
+![](./sysfs-lego-sensor/63-try-color-sensor-all.png) 
 
 ## Useful link
 

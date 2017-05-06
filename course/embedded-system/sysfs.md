@@ -16,7 +16,7 @@ Let find out what hardware devices available in ev3dev.
     cd /sys/class
     ls
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/sysfs/05-sysfs.png) 
+![](./sysfs/05-sysfs.png) 
 
 
 you might have a guest already of what the purpose of these devices by looking throught their name, such as `leds`, `power_supply`, `dc-motor`, `tacho-motor`, `sound`.
@@ -38,7 +38,7 @@ you might have a guest already of what the purpose of these devices by looking t
     cd leds 
     ls
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/sysfs/07-sysfs-leds-ls.png) 
+![](./sysfs/07-sysfs-leds-ls.png) 
 
 these `leds` named come with the `left` or `right` position with  `green` or `red` color.
    
@@ -53,7 +53,7 @@ let go side, to see what attitude do these leds have.
     cd ev3:left:green:ev3dev
     ls
    
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/sysfs/09-sysfs-leds-geen.png) 
+![](./sysfs/09-sysfs-leds-geen.png) 
    
    `brightness`, `max_brightness`, `trigger`, `uevent` and the remaining is `subsystem`.
    
@@ -63,7 +63,7 @@ find out the `max_brightness` value for led `brightness` value
 
     cat max_brightness
     
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/sysfs/11-sysfs-leds-max-brightness.png) 
+![](./sysfs/11-sysfs-leds-max-brightness.png) 
 
 Q: why 255?
 A: 255 is single-byte unsigned integer maximum value, 11111111 = 255.
@@ -96,10 +96,10 @@ the blink led using timer
     echo 100 > delay_off # set 0.1s off
     echo 100 > delay_on # set 0.1s on
 
-![](/home/alan/Programming/git/EmbeddedSystem-Lego-ev3/course/embedded-system/sysfs/13-sysfs-leds-play.png) 
+![](./sysfs/13-sysfs-leds-play.png) 
 
 ---
-
+<a name="programming"></a>
 ### Blink LEDs by Shell Script 
 
 Creating you shell script from following command
