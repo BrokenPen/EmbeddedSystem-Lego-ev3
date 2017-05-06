@@ -1,5 +1,18 @@
 #!/bin/sh
-ifconfig usb0 10.42.0.1
-iptables --table nat --append POSTROUTING --out-interface wlan0 -j MASQUERADE
-iptables --append FORWARD --in-interface usb0 -j ACCEPT
-echo 1 > /proc/sys/net/ipv4/ip_forward
+
+echo "plug your usb adpater into Lego ev3 USB slot"
+echo "use the brick interface to connect WiFi ap"
+echo "-----------------------------------------"
+echo "you may like to use notebook or router to "
+echo "setup a WiFi Hotspot"
+echo "-----------------------------------------"
+echo "use notebook to setup hotspot"
+echo "1. open network-manager"
+echo "   right click the network connection sign"
+echo "     click Network Setting"
+echo "     click Wi-Fi"
+echo "     click Use as Hotspot..."
+echo "2. connect wifi ap via  brick interface"
+echo "   select the Hotspot create in notebook"
+echo "   enter the password create by network-manager"
+echo "--------------Done----------------------------"
