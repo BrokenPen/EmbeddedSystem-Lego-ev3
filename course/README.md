@@ -11,7 +11,7 @@
     1. [Prepare OS](./operate-system/operate-system.md#prepare-os)
     2. [Prepare ev3dev](./operate-system/operate-system.md#prepare-ev3dev)
     
-3. [What is Embedded  System](./embedded-system/embedded-system.md)
+3. [What is Embedded  System](./embedded-system.md)
 
 4. [Prepare Lego EV3](./prepare-lego-ev3.md)
 
