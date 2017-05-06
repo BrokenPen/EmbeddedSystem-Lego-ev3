@@ -100,6 +100,7 @@ the blink led using timer
 
 ---
 <a name="programming"></a>
+<a name="shell-script"></a>
 ### Blink LEDs by Shell Script 
 
 Creating you shell script from following command
@@ -170,7 +171,7 @@ each blink with 1 second dealy, blink is 0.5s on then 0.5s off.
       
       
 ---
-
+<a name="c-language"></a>
 ### ev3dev assigment 2
 
 Assigment : Blink LEDs in order by C Programming Language
