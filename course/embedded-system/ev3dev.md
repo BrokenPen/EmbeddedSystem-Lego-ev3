@@ -1,3 +1,4 @@
+<!-- for remarkable -->
 <link rel="stylesheet" type="text/css" href="../../style.css">
 
 <style type="text/css">
@@ -5,7 +6,7 @@ img {
   width: 50%;
 }
 
-img.ev3-brick {
+img:.ev3-brick {
   width: 30%;
 }
 </style>
@@ -126,86 +127,86 @@ as your read as here, I though you already have these.
 
 1). The mircoSD card slot is locate as left side of EV3 brick
 
-![](ev3-brick/07-mircosd-slot.jpg){.ev3-brick}
+![](ev3-brick/07-mircosd-slot.jpg){:.ev3-brick}
 
 2). insert mircoSD, the front side(logo) of mircoSD face up.
 
-![](ev3-brick/08-mircosd-front-on-top.jpg){.ev3-brick}
+![](ev3-brick/08-mircosd-front-on-top.jpg){:.ev3-brick}
 
 3). connect EV3 brick to computer though USB cable, then press the center key(OK) to boot up EV3 brick. You should see Linux like start up screen.
 
-![](ev3-brick/10-attack-battery-usb-poewron.jpg){.ev3-brick}
+![](ev3-brick/10-attack-battery-usb-poewron.jpg){:.ev3-brick}
 
 4). ouch, I forget attach the power cable.
 
- ![](ev3-brick/11-loading-ev3dev.jpg){.ev3-brick}
+ ![](ev3-brick/11-loading-ev3dev.jpg){:.ev3-brick}
  
 5). ev3dev brick menu
 
- ![](ev3-brick/15-brick-gui-interface.jpg){.ev3-brick}
+ ![](ev3-brick/15-brick-gui-interface.jpg){:.ev3-brick}
 
 ## setup EV3 network
 
 1). Enter Wireless and Networks
 
- ![](ev3-brick/18-select-wireless-and-networks.jpg){.ev3-brick}
+ ![](ev3-brick/18-select-wireless-and-networks.jpg){:.ev3-brick}
 
 2). Enter All Network Connections
 
 <!--
-![](ev3-brick/19-wireless-and-networks.jpg) {.ev3-brick}
+![](ev3-brick/19-wireless-and-networks.jpg) {:.ev3-brick}
 -->
 
-![](ev3-brick/20-select-all-network-connections.jpg){.ev3-brick}
+![](ev3-brick/20-select-all-network-connections.jpg){:.ev3-brick}
 
 3). Enter Wired
 
-![](ev3-brick/21-enter-wired.jpg){.ev3-brick}
+![](ev3-brick/21-enter-wired.jpg){:.ev3-brick}
 
 4). Enable Connect automatically
 
 Default as disable
 
-![](ev3-brick/22-select-connect-automatically.jpg){.ev3-brick}
+![](ev3-brick/22-select-connect-automatically.jpg){:.ev3-brick}
 
 Now enabled
 
-![](ev3-brick/23-auto-enabled.jpg){.ev3-brick}
+![](ev3-brick/23-auto-enabled.jpg){:.ev3-brick}
 
 5). Enter IPv4
 
-![](ev3-brick/25-select-ipv4.jpg){.ev3-brick}
+![](ev3-brick/25-select-ipv4.jpg){:.ev3-brick}
 
 6). Enter Change...
 
-![](ev3-brick/26-change-the-configure.jpg){.ev3-brick}
+![](ev3-brick/26-change-the-configure.jpg){:.ev3-brick}
 
 7). Select Load Linux defaults
 
-![](ev3-brick/28-local-linux-default.jpg){.ev3-brick}
+![](ev3-brick/28-local-linux-default.jpg){:.ev3-brick}
 
 8). The Linux defaults config
 
-![](ev3-brick/30-network-interface.jpg){.ev3-brick}
+![](ev3-brick/30-network-interface.jpg){:.ev3-brick}
 
 9). RETURN, enter DNS
 
-![](ev3-brick/33-select-dns.jpg){.ev3-brick}
+![](ev3-brick/33-select-dns.jpg){:.ev3-brick}
 
 10). Select Add
 
-![](ev3-brick/34-add-new-dns.jpg){.ev3-brick}
+![](ev3-brick/34-add-new-dns.jpg){:.ev3-brick}
 
 11). OK, 
-![](ev3-brick/35-enter-new-dns.jpg){.ev3-brick}
+![](ev3-brick/35-enter-new-dns.jpg){:.ev3-brick}
 
 12). Type in 8.8.8.8, then select OK
 
-![](ev3-brick/36-enter-google-dns-8.8.8.8.jpg){.ev3-brick}
+![](ev3-brick/36-enter-google-dns-8.8.8.8.jpg){:.ev3-brick}
 
 13). Select Add
 
-![](ev3-brick/37-select-add.jpg){.ev3-brick}
+![](ev3-brick/37-select-add.jpg){:.ev3-brick}
 
 <!--
 14). Select ENET

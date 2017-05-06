@@ -5,7 +5,7 @@ img:.ev3-brick {  width: 30%; }
 
 # sysfs
 
-"`sysfs` is a pseudo file system provided by the Linux kernel that exports information about various `kernel subsystems`, `hardware devices`, and associated `device drivers` from the kernel's device model to user space through virtual files. In addition to providing information about various devices and kernel subsystems, exported virtual files are also used for their configuring." [[1]][ref-sysfs]
+"`sysfs` is a pseudo file system provided by the Linux kernel that exports information about various `kernel subsystems`, `hardware devices`, and associated `device drivers` from the kernel's device model to user space through virtual files. In addition to providing information about various devices and kernel subsystems, exported virtual files are also used for their configuring." [(Wikipedia contributors. Sysfs)][ref-sysfs]
 
 ---
 
@@ -111,6 +111,8 @@ Type the following content in the school script
 
 `:` need to type as `\:` use backslash to escape `:`.
 
+`code/sysfs/led.sh`
+
     #!/bin/sh
     LED1=/sys/class/leds/ev3\:left\:green\:ev3dev\brightness
     while true;
@@ -183,6 +185,79 @@ Assigment : Blink LEDs in order by C Programming Language
 - LED1 -> LED2 -> LED3 -> LED4
 
 each blink with 1 second dealy, blink is 0.5s on then 0.5s off. 
+
+C language program example( `code/led.c`) :
+
+    #include <stdio.h>
+    #include <stddef.h>
+    #include <time.h>
+
+    #define on "255"
+    #define off "0"
+
+    #define led1 "/sys/class/leds/ev3\:left\:green\:ev3dev\brightness"
+
+    void delay(init millseconds) {
+      long pause;
+      clock_t now, then;
+      pause = milliseconds*(CLOCKS_PER_SEC/1000);
+      now = then = clock();
+      while（ （now-then) < pause)
+        now = clock();
+      }
+    }
+
+    int  main (void) {
+
+      // define file handles for led1
+      FILE *ifp_led1;
+
+      // led1 on
+
+      // make ifp_led1 as writable
+      ifp_led1 = fopen(led1, "w");
+      // fail to oepn
+      if(ifp_led1 == NULL) {printf("Unable to open.\n");}
+      // led1 on
+      fseek(ifp_led1, on, SEEK_SET);
+      // print the state
+      fprintf(ifp_led1, "%s",  on);
+      // flush
+      fflush(ifp_led1);
+      // close files
+      fclose(ifp_led1);
+
+      // waiting for 1 second
+      delay(1000);
+
+      // led1 off
+
+      // make ifp_led1 as writable
+      ifp_led1 = fopen(led1, "w");
+      // fail to oepn
+      if(ifp_led1 == NULL) {printf("Unable to open.\n");}
+      // led1 off
+      fseek(ifp_led1, off, SEEK_SET);
+      // print the state
+      fprintf(ifp_led1, "%s",  on);
+      // flush
+      fflush(ifp_led1);
+      // close files
+      fclose(ifp_led1);
+
+
+      return 0;
+    }
+
+
+compile the c code and run
+
+    gcc led.c -o led
+    chmod +x led
+    ./led
+    
+
+
 
 ---
 
