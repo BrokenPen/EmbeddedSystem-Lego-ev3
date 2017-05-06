@@ -17,10 +17,12 @@
 
 4. [Setup ev3dev](./embedded-system/ev3dev.md#ev3dev)
 
-7. [Hello World ev3dev](./hello-world-ev3dev.md)
-    1. [connect ev3 via usb cable]
-    2. [setup ev3 blick network]
-    3. [ssh](./hello-world-ev3dev.md#ssh)
+7. [Hello World ev3dev](./embedded-system/hello-world-ev3dev.md#hello-world-ev3dev)
+    1. [connect ev3 via usb](./embedded-system/hello-world-ev3dev.md#connect-ev3-via-usb)
+    2. [share Internet to ev3dev](./embedded-system/hello-world-ev3dev.md#ev3dev-connect-to-the-internet-via-usb)
+    3. [create wifi hotspot](./embedded-system/hello-world-ev3dev.md#use-network-manager) 
+    4. [ssh](./embedded-system/hello-world-ev3dev.md#ssh)
+    5. [update-ev3dev](./embedded-system/hello-world-ev3dev.md#update-ev3dev)
     
 5. [sysfc](./embedded-system/sysfs.md)
     1. [programming](./embedded-system/sysfs.md#programming)
