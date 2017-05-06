@@ -1,4 +1,6 @@
-# Index 
+# learn Embedded System through Lego EV3
+
+## Index 
 
 1. [Preface](#preface)
     1. [Lego EV3 as STEM educational tool in school](#lego-ev3-as-stem-educational-tool-in-school)
@@ -6,8 +8,13 @@
     3. [About me](#about-me)
     4. [Why no maintain after May 2017](#why-no-maintain-afer-may-2017)
 2. [Course](#course)
-2. Who is target to use this course
-3. [Index of the course](#index-of-the-course)
+    1. [Index of the course](#index-of-the-course)
+    2. [Target User](#target-user)
+3. [License](#license)
+4. [Contributing](#contributing)
+5. [Reference](#reference)
+6. [Useful link](#useful-link)
+
 
 ## Preface
 ---
@@ -42,6 +49,13 @@ Here I not:
 ### Index of the course
 
 [course/README.md](./course/README.md)
+
+### Target user
+
+- tutour
+- non Computer Science Student
+- secondry student
+- who bored with LEGO mindstorm
 
 
 ## License
