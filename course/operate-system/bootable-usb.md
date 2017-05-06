@@ -1,3 +1,5 @@
+# Bootable USB
+
 # To create bootable Linux USB
 
 The hardware you need descript in `hardware/hardware.md`.

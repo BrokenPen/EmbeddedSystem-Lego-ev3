@@ -9,9 +9,13 @@
 
 2. [Operate System](./operate-system/operate-system.md#operate-system)
     1. [Prepare OS](./operate-system/operate-system.md#prepare-os)
+        1. [Bootable USB](./operate-system/bootable-sub.md#bootable-usb)
+        2. [Virtualbox](./operate-system/virtualbox.md#virtualbox)
     2. [Prepare ev3dev](./operate-system/operate-system.md#prepare-ev3dev)
     
 3. [What is Embedded  System](./embedded-system.md)
+
+4. [Setup ev3dev](./embedded-system/ev3dev.md#ev3dev)
 
 7. [Hello World ev3dev](./hello-world-ev3dev.md)
     1. [connect ev3 via usb cable]
