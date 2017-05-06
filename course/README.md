@@ -18,15 +18,13 @@
     2. [setup ev3 blick network]
     3. [ssh](./hello-world-ev3dev.md#ssh)
     
-5. [sysfc](./embedded-system/sysfc.md)
+5. [sysfc](./embedded-system/sysfs.md)
+    1. [programming](./embedded-system/sysfs.md#programming)
+        1. [shell script](./embedded-system/sysfs.md#shell-script)
+        2. [c-language](./embedded-system/sysfs.md#c-language)
+    2. [lego-sensor](./embedded-system/sysfs-lego-sensor.md#sysfs-lego-sensor)
     
 5. [Programming](./programming.md)
-    1. [shell-script](./programming.md#shell-script)
-         1. [programming 1]
-         2. [no naming yet]
-    2. [c](./programming.md#ev3dev-lang-c)
-         1.  [named program 1]
-         2. [named program 2]
     3. [python](./programming.md#ev3dev-lang-python)
          1. [named program 1]
          2. [named program 2]
