@@ -24,7 +24,8 @@ assume you have run before
       sudo adduser mosquitto
       # type mosquitto as password for mosquitto, keep remaining field empty by pressing enter for Y
       sudo apt-get install mosquitto mosquitto-clients -y
-    
+      sudo apt-get install build-essential libwrap0-dev libssl-dev libc-ares-dev uuid-dev xsltproc -y
+
 
 ## confige mqtt
 
@@ -33,6 +34,9 @@ assume you have run before
 
 Create mqtt client for connect mosquitto
 
+    sudo su
+    mkdir /etc/mosquitto
+    echo "" > /etc/mosquitto/pwfile
     sudo mosquitto_passwd /etc/mosquitto/pwfile ev3
     # password : formosa
         
@@ -44,26 +48,32 @@ Create mqtt client for connect mosquitto
 
 Configuration local
 
-    cd /etc/mostquitto
-    sudo nano mosquitto.conf 
+    cd /etc/mosquitto
+    sudo cat mosquitto.conf 
     # First line
     # Place your local configuration in /etc/mosquitto/conf.d/
 
 Way to confige mosquitto
 
-    cd /etc/mostquitto/conf.d
+    cd /etc/mosquitto/conf.d
     ls
     # README
     cat README
     # Any files placed in this directory that have a .conf ending will be loaded as config files by the broker. Use this to make your local config.
     man mosquitto.conf
+
     # Let use the example text that I found in digitalocean.com
     # https://www.digitalocean.com/community/questions/how-to-setup-a-mosquitto-mqtt-server-and-receive-data-from-owntracks
-    sudo nano mosquitto.conf
+
+    # confige mosquitto mqtt broker
+
+    sudo nano /etc/mosquitto/conf.d/mosquitto.conf
+
+    
 
 Copy and Paste the follow content
 
-    listener 1883 10.42.0.3
+    listener 1883 *
     persistence true
     persistence_location /var/lib/mosquitto/
     persistence_file mosquitto.db
@@ -76,13 +86,18 @@ Copy and Paste the follow content
     log_type information
     connection_messages true
     log_timestamp true
-    allow_anonymous false
+    allow_anonymous true
     password_file /etc/mosquitto/pwfile
 
 Reset mosquitto service
 
     sudo /sbin/ldconfig
     sudo service mosquitto restart
+    sudo update-rc.d mosquitto enable
+
+Start mosquitto, make sure is started
+
+    sudo mosquitto
 
 ---
 
@@ -100,26 +115,57 @@ simple test with authoration
     
 terminal 1 :
 
-    mosquitto_sub -h 10.42.0.3 -p 1883 -t hello/world -d
+    sudo mosquitto
 
 Result : 
 
-    Client mosqsub/11891-BROKENPEN sending CONNECT
-    Client mosqsub/11891-BROKENPEN received CONNACK
-    Connection Refused: not authorised.
+    1494404200: mosquitto version 1.3.4 (build date 2014-08-17 04:02:48+0000) starting
+    1494404200: Using default config.
+    1494404200: Opening ipv4 listen socket on port 1883.
+    1494404200: Opening ipv6 listen socket on port 1883.
+    1494404200: Warning: Address family not supported by protocol
+
+
+
+terminal 2 :
+
+    sudo mosquitto_sub -h 10.42.0.3 -p 1883 -t hello/world -d
+
+Result : 
+
+    Client mosqsub/1365-ev3dev sending CONNECT
+    Client mosqsub/1365-ev3dev received CONNACK
+    Client mosqsub/1365-ev3dev sending SUBSCRIBE (Mid: 1, Topic: hello/world, QoS: 0)
+    Client mosqsub/1365-ev3dev received SUBACK
+    Subscribed (mid: 1): 0
+
   
 ---
 
-terminal 2 : 
+terminal 3 : 
     
-    mosquitto_pub -h 10.42.0.3 -p 1883 -d -t hello/world -m "hello"
+    sudo mosquitto_pub -h 10.42.0.3 -p 1883 -d -t hello/world -m "hello"
 
 Result : 
 
-    Client mosqpub/12102-BROKENPEN sending CONNECT
-    Client mosqpub/12102-BROKENPEN received CONNACK
-    Connection Refused: not authorised.
-    Error: The connection was refused.
+    Client mosqpub/1367-ev3dev sending CONNECT
+    Client mosqpub/1367-ev3dev received CONNACK
+    Client mosqpub/1367-ev3dev sending PUBLISH (d0, q0, r0, m1, 'hello/world', ... (5 bytes))
+    Client mosqpub/1367-ev3dev sending DISCONNECT
+
+terminal 2 Result : 
+
+    Client mosqsub/1365-ev3dev received PUBLISH (d0, q0, r0, m0, 'hello/world', ... (5 bytes))
+    hello
+
+terminal 1 Result : 
+
+    ...
+    1494404376: New connection from 10.42.0.3 on port 1883.
+    1494404376: New client connected from 10.42.0.3 as mosqsub/1404-ev3dev (c1, k60).
+    1494404387: New connection from 10.42.0.3 on port 1883.
+    1494404387: New client connected from 10.42.0.3 as mosqpub/1405-ev3dev (c1, k60)
+    ...
 
 ---
 
@@ -127,7 +173,7 @@ Result :
 
 use username and password to connect
 
-terminal 1 : 
+terminal 2 : 
 
     mosquitto_sub -h 10.42.0.3 -p 1883 -t hello/world -d -u ev3 -P formosa
      
@@ -141,7 +187,7 @@ Result :
 
 ---
 
-terminal 2 : 
+terminal 3 : 
 
     mosquitto_pub -h 10.42.0.3 -p 1883 -d -t hello/world -m "hello" -u test -P formosa
     
@@ -153,6 +199,18 @@ Result :
     Client mosqpub/12210-BROKENPEN sending DISCONNECT
 
 ---
+
+ 
+
+### troubleshooting
+
+Result 
+
+    Error: Connection refused
+
+Solution : Make sure the mosquitto broker is started!
+
+    sudo mosquitto
 
 ### python mqtt library
 
