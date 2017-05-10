@@ -179,10 +179,10 @@ terminal 2 :
      
 Result :
 
-    Client mosqsub/18187-raspberry sending CONNECT
-    Client mosqsub/18187-raspberry received CONNACK
-    Client mosqsub/18187-raspberry sending SUBSCRIBE (Mid: 1, Topic: hello/world, QoS: 0)
-    Client mosqsub/18187-raspberry received SUBACK
+    Client mosqsub/600-ev3dev sending CONNECT
+    Client mosqsub/600-ev3dev received CONNACK
+    Client mosqsub/600-ev3dev sending SUBSCRIBE (Mid: 1, Topic: hello/world, QoS: 0)
+    Client mosqsub/600-ev3dev received SUBACK
     Subscribed (mid: 1): 0
 
 ---
@@ -193,10 +193,21 @@ terminal 3 :
     
 Result : 
 
-    Client mosqpub/12210-BROKENPEN sending CONNECT
-    Client mosqpub/12210-BROKENPEN received CONNACK
-    Client mosqpub/12210-BROKENPEN sending PUBLISH (d0, q0, r0, m1, 'hello/world', ... (5 bytes))
-    Client mosqpub/12210-BROKENPEN sending DISCONNECT
+    Client mosqpub/617-ev3dev sending CONNECT
+    Client mosqpub/617-ev3dev received CONNACK
+    Client mosqpub/617-ev3dev sending PUBLISH (d0, q0, r0, m1, 'hello/world', ... (5 bytes))
+    Client mosqpub/617-ev3dev sending DISCONNECT
+
+
+terminal 1 result :
+
+    ...
+    1494407699: New connection from 10.42.0.3 on port 1883.
+    1494407699: New client connected from 10.42.0.3 as mosqsub/600-ev3dev (c1, k60, uev3).
+    1494407739: New connection from 10.42.0.3 on port 1883.
+    1494407739: New client connected from 10.42.0.3 as mosqpub/617-ev3dev (c1, k60, utest).
+    ...
+
 
 ---
 
