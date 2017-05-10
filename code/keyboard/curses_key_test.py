@@ -7,10 +7,10 @@
 #******************************************************************************/
 
 #*******************************************************************************
-# Modifited : None
+# Last Modifited : 2017 May 10, 15:30, change for python3, BrokenPen
 #******************************************************************************/
 
-# import curses
+#!/bin/python3
 import curses
 
 # Get the curses window, turn off echoing of keyboard to screen, turn on
@@ -26,15 +26,15 @@ try:
             if char == ord('q'):
                 break
             elif char == curses.KEY_UP:
-                print "up"
+                print ("up")
             elif char == curses.KEY_DOWN:
-                print "down"
+                print ("down")
             elif char == curses.KEY_RIGHT:
-                print "right"
+                print ("right")
             elif char == curses.KEY_LEFT:
-                print "left"
+                print ("left")
             elif char == 10:
-                print "stop"    
+                print ("stop" )   
              
 finally:
     #Close down curses properly, inc turn echo back on!
