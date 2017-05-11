@@ -31,23 +31,31 @@ curses.noecho()
 curses.cbreak()
 screen.keypad(True)
 
+print("press z to quit")
+
 try:
         while True:   
             char = screen.getch()
-            if char == ord('q'):
+            if char == ord('z'):
                 break
-            elif char == curses.KEY_UP:
+            elif char == curses.KEY_UP or char == ord('w'):
                 left_motor.run_timed(time_sp=50, speed_sp=+750)
                 right_motor.run_timed(time_sp=50, speed_sp=+750)
-            elif char == curses.KEY_DOWN:
+            elif char == curses.KEY_DOWN or char == ord('s'):
                 left_motor.run_timed(time_sp=50, speed_sp=-750)
                 right_motor.run_timed(time_sp=50, speed_sp=-750)
-            elif char == curses.KEY_RIGHT:
+            elif char == curses.KEY_RIGHT or char == ord('a'):
                 left_motor.run_timed(time_sp=50, speed_sp=-750)
                 right_motor.run_timed(time_sp=50, speed_sp=+750)                
-            elif char == curses.KEY_LEFT:
+            elif char == curses.KEY_LEFT or char == ord('d'):
                 left_motor.run_timed(time_sp=50, speed_sp=+750)
                 right_motor.run_timed(time_sp=50, speed_sp=-750)
+            elif char == ord('q'):
+                left_motor.run_timed(time_sp=50, speed_sp=+500)
+                right_motor.run_timed(time_sp=50, speed_sp=+750)
+            elif char == ord('e'):
+                left_motor.run_timed(time_sp=50, speed_sp=+750)
+                right_motor.run_timed(time_sp=50, speed_sp=+500)
             elif char == 10:
                pritn("nothing")
              
