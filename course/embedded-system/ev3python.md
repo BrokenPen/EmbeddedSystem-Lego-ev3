@@ -12,7 +12,14 @@ https://sites.google.com/site/ev3python/learn_ev3_python/using-motors
 
 ## move forward
 
-first we need to include the python3 language that we use in the code
+use nano to create a new python file in tacho directory 
+
+    cd /home/robot
+    mkdir tacho-motor
+    nano move_forward.py
+    # type the follow code # or copy and paste
+
+include the python3 language that we use in the code
 
 `from ev3dev.ev3 improt` which mean improt everything from ev3dev.ev3 package
 
@@ -39,6 +46,23 @@ first we need to include the python3 language that we use in the code
 
   Sound.beep()
 
+### execute the python code
+
+ev3.python require root premssion to execute it, so need to use sudo to do so.
+
+method 1, use sudo python3 to execute it
+
+     sudo python3 move_forward.py
+
+method 2, use giving wrapper to execute it
+
+     sudo chmod +x move_forward.py
+
+method 3, use the brickman gui interface
+
+     sudo chmod +x move_forward.py
+
+     Main-Page->File Browser->tacho-motor->move_forward.py
 
 
 ## Useful link
