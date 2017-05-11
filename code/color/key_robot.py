@@ -1,4 +1,3 @@
-#!/bin/python3
 #*******************************************************************************
 # Sources      : 
 # Link         :
@@ -13,13 +12,13 @@
 # Last Modifited : 2017 May 10, 15:30, change for python3, BrokenPen
 #******************************************************************************/
 
-
+#!/bin/python3
 
 # import curses and GPIO
 import curses
 from ev3dev.ev3 import *
 
-# declare motor port
+# declare motor port 
 left_motor = LargeMotor('outB')
 right_motor = LargeMotor('outC')
 
@@ -50,11 +49,10 @@ try:
                 right_motor.run_timed(time_sp=50, speed_sp=+750)
             elif char == 10:
                pritn("nothing")
-             
+
 finally:
     #Close down curses properly, inc turn echo back on!
     curses.nocbreak(); screen.keypad(0); curses.echo()
     curses.endwin()
-    Sound.beep()
-    
+    sound.beep()
 
