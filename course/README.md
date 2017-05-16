@@ -29,19 +29,18 @@
         1. [shell script](./embedded-system/sysfs.md#shell-script)
         2. [c-language](./embedded-system/sysfs.md#c-language)
     2. [lego-sensor](./embedded-system/sysfs-lego-sensor.md#sysfs-lego-sensor)
-    
-5. [Programming](./programming.md)
-    3. [python](./programming.md#ev3dev-lang-python)
-         1. [named program 1]
-         2. [named program 2]
-         
-6. [charceter device]
-      1. [UART](#uart)
-      2. [esp8266 to ev3](#esp8266-to-ev3)
-      
-7. [python mqtt]
 
-8. [keyboard contorl]
+6. [charceter device](./embedded-system/character-device.md) // TODO
+     1. [arduino](./arduino.md) 
+     2. [esp8266](./esp8266.md) 
+     3. [python serial](./embedded-system/pyserial.md) // TODO docuement, code finshed
+          
+7. [mqtt](./mqtt.md#mqtt)
+     1. [mosquitto](./mqtt.md#install-mqtt-broker)
+     2. [paho-mqtt](./mqtt.md#python-mqtt-library)
+
+8. [keyboard contorl] // TODO document, code finished
+     
     
 #Approach
 ---
