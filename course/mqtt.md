@@ -18,7 +18,7 @@ assume you have run before
 
     sudo apt-get update -y & sudo apt full-upgarde -y
 
-## install mqtt
+## install mqtt broker
 
       ssh robot@10.42.0.3
       sudo adduser mosquitto
