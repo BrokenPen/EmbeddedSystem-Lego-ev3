@@ -15,7 +15,7 @@
 
 
 
-# import curses and GPIO
+# import curses and ev3
 import curses
 from ev3dev.ev3 import *
 
