@@ -20,7 +20,7 @@ assume you have run before
 
 ## install mqtt
 
-      ssh robot@10.42.0.3 
+      ssh robot@10.42.0.3
       sudo adduser mosquitto
       # type mosquitto as password for mosquitto, keep remaining field empty by pressing enter for Y
       sudo apt-get install mosquitto mosquitto-clients -y
@@ -39,17 +39,17 @@ Create mqtt client for connect mosquitto
     echo "" > /etc/mosquitto/pwfile
     sudo mosquitto_passwd /etc/mosquitto/pwfile ev3
     # password : formosa
-        
+
     sudo mosquitto_passwd  /etc/mosquitto/pwfile test
     # password : formosa
-  
+
     sudo mkdir /var/lib/mosquitto/
     sudo chown mosquitto:mosquitto /var/lib/mosquitto/ -R
 
 Configuration local
 
     cd /etc/mosquitto
-    sudo cat mosquitto.conf 
+    sudo cat mosquitto.conf
     # First line
     # Place your local configuration in /etc/mosquitto/conf.d/
 
@@ -69,7 +69,7 @@ Way to confige mosquitto
 
     sudo nano /etc/mosquitto/conf.d/mosquitto.conf
 
-    
+
 
 Copy and Paste the follow content
 
@@ -108,16 +108,16 @@ you need two terminal to run subsriber and publisher side
 
     ssh robot@10.42.0.3
     sudo su root
-    
+
 simple test with authoration
 
-### mqtt annmoymos connect 
-    
+### mqtt annmoymos connect
+
 terminal 1 :
 
     sudo mosquitto
 
-Result : 
+Result :
 
     1494404200: mosquitto version 1.3.4 (build date 2014-08-17 04:02:48+0000) starting
     1494404200: Using default config.
@@ -131,7 +131,7 @@ terminal 2 :
 
     sudo mosquitto_sub -h 10.42.0.3 -p 1883 -t hello/world -d
 
-Result : 
+Result :
 
     Client mosqsub/1365-ev3dev sending CONNECT
     Client mosqsub/1365-ev3dev received CONNACK
@@ -139,26 +139,26 @@ Result :
     Client mosqsub/1365-ev3dev received SUBACK
     Subscribed (mid: 1): 0
 
-  
+
 ---
 
-terminal 3 : 
-    
+terminal 3 :
+
     sudo mosquitto_pub -h 10.42.0.3 -p 1883 -d -t hello/world -m "hello"
 
-Result : 
+Result :
 
     Client mosqpub/1367-ev3dev sending CONNECT
     Client mosqpub/1367-ev3dev received CONNACK
     Client mosqpub/1367-ev3dev sending PUBLISH (d0, q0, r0, m1, 'hello/world', ... (5 bytes))
     Client mosqpub/1367-ev3dev sending DISCONNECT
 
-terminal 2 Result : 
+terminal 2 Result :
 
     Client mosqsub/1365-ev3dev received PUBLISH (d0, q0, r0, m0, 'hello/world', ... (5 bytes))
     hello
 
-terminal 1 Result : 
+terminal 1 Result :
 
     ...
     1494404376: New connection from 10.42.0.3 on port 1883.
@@ -173,10 +173,10 @@ terminal 1 Result :
 
 use username and password to connect
 
-terminal 2 : 
+terminal 2 :
 
     mosquitto_sub -h 10.42.0.3 -p 1883 -t hello/world -d -u ev3 -P formosa
-     
+
 Result :
 
     Client mosqsub/600-ev3dev sending CONNECT
@@ -187,11 +187,11 @@ Result :
 
 ---
 
-terminal 3 : 
+terminal 3 :
 
     mosquitto_pub -h 10.42.0.3 -p 1883 -d -t hello/world -m "hello" -u test -P formosa
-    
-Result : 
+
+Result :
 
     Client mosqpub/617-ev3dev sending CONNECT
     Client mosqpub/617-ev3dev received CONNACK
@@ -211,11 +211,11 @@ terminal 1 result :
 
 ---
 
- 
+
 
 ### troubleshooting
 
-Result 
+Result
 
     Error: Connection refused
 
@@ -225,14 +225,124 @@ Solution : Make sure the mosquitto broker is started!
 
 ### python mqtt library
 
-    sudo apt-get install python-pip  -y # pip ulitily
-    sudo pip install paho-mqtt
+    sudo apt-get install python3-pip  -y # pip ulitily
+    sudo pip3 install paho-mqtt
 
 
+### python mqtt publisher
+
+    #!/usr/bin/env python3
+    # import mqtt library
+    import paho.mqtt.client as mqtt
+    
+    # This is the Publisher
+    client = mqtt.Client()
+    
+    # connect to localhost /etc/hosts, ev3 self
+    client.connect("localhost",1883,60)
+    
+    # public Hello world to class/ev3dev
+    client.publish("class/ev3dev", "Hello world!");
+    
+    # after published the messenage, disconnect from the mqtt broker
+    client.disconnect();
+
+
+
+### python mqtt subsriber 
+
+in python mqtt subsriber we need to implement on_connect and on_message function of mqtt.Client
+    
+    #!/usr/bin/env python3
+    # import mqtt library
+    import paho.mqtt.client as mqtt
+
+    # This is the Subscriber
+
+    
+    def on_connect(client, userdata, flags, rc):
+       # conver the connect result into string and print it
+       print("Connected with result code "+str(rc))
+       # subscribed after connect to mqtt broker
+       client.subscribe("class/ev3dev")
+
+    def on_message(client, userdata, msg):
+       # conver the messenage payload part to string and print it out
+       print(msg.topic+" "+str(msg.payload))
+    
+    
+    client = mqtt.Client()
+    
+    # connect to localhost mqtt broker, ev3dev self
+    client.connect("localhost",1883,60)
+
+    # assign callback function
+    client.on_connect = on_connect
+    client.on_message = on_message
+
+    # run the subscriber forever
+    client.loop_forever()
+
+### python mqtt keep publish data forever
+
+In the above of python mqtt publisher example, only publish "Hello World" one time. To keep publish data in a short period or after a event/value changed, in  case publish more than one, simply add a while loop in python main part
+
+
+
+    #!/usr/bin/env python3
+    
+    import paho.mqtt.client as mqtt
+    # need some delay for each publish
+    improt sleep
+    
+    # This is the Publisher
+    client = mqtt.Client()
+    
+    # connect to localhost /etc/hosts, ev3 self
+    client.connect("localhost",1883,60)
+    
+    # a variable to count how many time published
+    counter = 0
+    
+    # while loop
+    while True: 
+       # public Hello world to class/ev3dev
+       client.publish("class/ev3dev", "Hello world!");
+       
+       # increase counter and print 
+       counter+=1
+       print("publish count : ", str(counter))
+
+       # wait 5 seconds
+       sleep(5)
+      
+    # never reach here
+    client.disconnect();
+    
+### python mqtt event driven
+
+in this case, we want to after a value changed or a event trigger actived then publish messenage to mqtt broker. Simpley use a if condition in a while loop
+
+    while True:
+        if ts.value == 1 :
+          client.publish("class/ev3dev/button", "button pressed")
+          sleep(0.5)
+
+### assigment 1
+
+  write two program, python mqtt subsriber and publisher program while sensor value is changed, publish some info.
+  
+  
+
+### assgiment 2
+
+require : esp8266 lesson
+
+   write two or more program, use esp8266(NodeMCU) to connect more sensor, when trigger is actived, ask esp8266 for data then puslibhs to mqtt broker.
 
 ## reference link
 
-[mqtt]: 
+[mqtt]:
 - FAQ - Frequently Asked Questions | MQTT. MQTT.ORG. [accessed 2017 May 6]. http://mqtt.org/faq
 What is MQTT?
 
