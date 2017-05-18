@@ -278,7 +278,7 @@ compile the c code and run
 - LEGO MINDSTORMS EV3 — ev3dev-jessie Linux kernel drivers 19 documentation, LEDS
 http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-jessie/ev3.html#leds
 
-ntcu 105-1 embedded-system/ Lab03-Toggle user LED on the Beaglebone.pdf
+- ntcu 105-1 embedded-system/ Lab03-Toggle user LED on the Beaglebone.pdf
 
 ## Useful Link
 

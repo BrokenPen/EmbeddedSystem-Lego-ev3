@@ -19,7 +19,7 @@ while True:
     line = ser.readline()
     # when line is not empty
     if (line != ""):
-		# use [:-2] to exclude /r/n 
+       	# use [:-2] to exclude /r/n 
         # print(line[:-2].decode())
         
         temp, humi = line[:-2].decode().split(",");

@@ -32,12 +32,11 @@
 
 7. [keyboard contorl] // TODO document, code finished
 
-
-8. [charceter device](./embedded-system/character-device.md) // TODO
-     1. [arduino](./arduino.md) 
-     2. [esp8266](./esp8266.md) 
-     3. [python serial](./embedded-system/pyserial.md) // TODO docuement, code finshed
-          
+8. [charceter device](./character-device.md#character-device) 
+     1. [arduino](./arduino.md#arduino) 
+     2. [esp8266](./esp8266.md#esp8266) 
+     3. [python serial](./embedded-system/pyserial.md)
+               
 9. [mqtt](./mqtt.md#mqtt)
      1. [mosquitto](./mqtt.md#install-mqtt-broker)
      2. [paho-mqtt](./mqtt.md#python-mqtt-library)
@@ -48,10 +47,20 @@
    
      
     
-#Approach
+## Approach
 ---
 
 Only include biref concept of Embedded System.
+
+## Reading guide
+
+- Chapter 1 - Chapter 4 is the set up without Lego Ev3 of this course.
+- Chapter 5 is set up for Lego Ev3
+- Chapter 6 is talk about sysf, A file system representation of the system's device tree
+- Chapter 7 implement a keyboard control robot with ssh control
+- Chapter 8 is talk about character device of device driver and a simple implement of serial communcaiton
+- Chapter 9 is talk about mqtt in IoT and a simple implementation of mqtt using python mqtt library
+- Chapter 10 is extra application for ev3dev.
 
 # TODO
 ---
