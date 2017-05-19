@@ -3,9 +3,9 @@
 ..  [Approach](#approach)
 ..  [TODO](#todo)
 
-1. [Hardware](./hardware/hardware.md#hardware)
-    1. [Computer](./hardware/hardware.md#computer)
-    2. [Lego-ev3](./hardware/hardware.md#lego-ev3)
+1. [Hardware](./hardware.md#hardware)
+    1. [Computer](./hardware.md#computer)
+    2. [Lego-ev3](./hardware.md#lego-ev3)
 
 2. [Operate System](./operate-system/operate-system.md#operate-system)
     1. [Prepare OS](./operate-system/operate-system.md#prepare-os)
@@ -30,7 +30,7 @@
         2. [c-language](./embedded-system/sysfs.md#c-language)
     2. [lego-sensor](./embedded-system/sysfs-lego-sensor.md#sysfs-lego-sensor)
 
-7. [keyboard contorl] // TODO document, code finished
+7. [keyboard contorl](./embedded-system/keyboard-control.md#keyboard-control)
 
 8. [charceter device](./character-device.md#character-device) 
      1. [arduino](./arduino.md#arduino) 
@@ -66,3 +66,4 @@ Only include biref concept of Embedded System.
 ---
 
 maybe a todo list will help?
+u
