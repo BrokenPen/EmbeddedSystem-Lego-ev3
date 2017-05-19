@@ -57,6 +57,13 @@ Install GNU/Linux  on Notebook is the best!
 
 ## microSD card for Lego EV3
 
+![](./hardware/10-mircosd_cardslot_usb_reader.jpg) 
+
+|mircoSD 16GB | mircoSD to SD card slot | mircoSD usb reader |
+|-|-|-|
+
+***
+
 a microSD card is indeed to install ev3dev.
 
 a quota from : http://www.ev3dev.org/docs/getting-started/
@@ -84,7 +91,14 @@ The Wifi dongle work on Lego EV3
 - Edimax would be fine
 - try what you have that is work and buy as you need
 
-Some cheap Wifi dongle should avoid which don't work on Lego EV3.
+Some cheap(low cost) Wifi dongle should avoid which don't work on Lego EV3.
+
+![](./hardware/15-wifi-adapter.jpg) 
+
+| Name | 360 generation 3 | D-Link | BELKIN | mecly | iFast |
+| - | - | - | - |  - |  - |
+| Chip | ? | ? | ? |
+| Work | No(No Linux firmware) | Maybe | Work | No(ev3dev) | No(ev3dev) |
 
 - rtk8188us, the chip is often used in the China Brand cheap Wifi dongle under 3USD.
 - 360 generation 3 Wifi dongle, which don't support Linux, Lego EV3(ev3dev) too.
@@ -99,3 +113,10 @@ Some cheap Wifi dongle should avoid which don't work on Lego EV3.
 
 [microsd]: https://en.wikipedia.org/wiki/Secure_Digital#SD_.28SDSC.29
 [microsdhc]: https://en.wikipedia.org/wiki/Secure_Digital#SDHC
+
+***
+
+### Useful Link
+
+List of Wi-Fi Device IDs in Linux - WikiDevi
+- https://wikidevi.com/wiki/List_of_Wi-Fi_Device_IDs_in_Linux
