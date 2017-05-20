@@ -1,5 +1,5 @@
 #Index
----
+
 ..  [Approach](#approach)
 ..  [TODO](#todo)
 
@@ -7,11 +7,11 @@
     1. [Computer](./hardware.md#computer)
     2. [Lego-ev3](./hardware.md#lego-ev3)
 
-2. [Operate System](./operate-system/operate-system.md#operate-system)
-    1. [Prepare OS](./operate-system/operate-system.md#prepare-os)
+2. [Operate System](./operate-system.md#operate-system)
+    1. [Prepare OS](./operate-system.md#prepare-os)
         1. [Bootable USB](./operate-system/bootable-usb.md#bootable-usb)
         2. [Virtualbox](./operate-system/virtualbox.md#virtualbox)
-    2. [Prepare ev3dev](./operate-system/operate-system.md#prepare-ev3dev)
+    2. [Prepare ev3dev](./operate-system.md#prepare-ev3dev)
     
 3. [What is Embedded  System](./embedded-system.md)
 
@@ -48,7 +48,6 @@
      
     
 ## Approach
----
 
 Only include biref concept of Embedded System.
 
@@ -62,8 +61,7 @@ Only include biref concept of Embedded System.
 - Chapter 9 is talk about mqtt in IoT and a simple implementation of mqtt using python mqtt library
 - Chapter 10 is extra application for ev3dev.
 
-# TODO
----
+## TODO
+
 
 maybe a todo list will help?
-u

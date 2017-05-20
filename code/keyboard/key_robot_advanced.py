@@ -22,6 +22,7 @@ from ev3dev.ev3 import *
 # declare motor port
 left_motor = LargeMotor('outB')
 right_motor = LargeMotor('outC')
+weapon_motor = LargeMotor('outA')
 
 
 # Get the curses window, turn off echoing of keyboard to screen, turn on
@@ -56,6 +57,12 @@ try:
             elif char == ord('e'):
                 left_motor.run_timed(time_sp=50, speed_sp=+750)
                 right_motor.run_timed(time_sp=50, speed_sp=+500)
+            elif char == ord('f'):
+                weapon_motor.run_to_rel_pos(position_sp=270, speed_sp=900, stop_action="coast")
+                weapon_motor.wait_while('running')
+                weapon_motor.run_to_rel_pos(position_sp=270, speed_sp=-900, stop_action="coast")
+                #weapon_motor.wait_while('running')
+                Sound.beep()
             elif char == 10:
                pritn("nothing")
              

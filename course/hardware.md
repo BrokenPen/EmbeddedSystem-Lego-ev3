@@ -2,10 +2,10 @@
 
 In this section, I only mention about the hardware you may need it.
 
-The Software/OS requirement part in the [`course/operate-system/operate-system.md`](../operate-system/operate-system.md#operate-system).
+The Software/OS requirement part in the [`course/operate-system/operate-system.md`](./operate-system.md#operate-system).
 
 ## Computer
----
+
 The standard computer will be fine,  whether a Desktop or Notebook.
 
 ### Copmuter OS
@@ -28,6 +28,8 @@ Please use a Linux Live USB, due to most school computer might have installed re
 
 The boot menu is always available at comptuer startup screen(the logo), most of the bios boot menu is at F12(keyboard). Prese F12 after you press the power button to boot up the computer to enter boot menu.
 
+***
+
 ##### Use virtual machine
 
 ==Condition : The computer bios is locked or you can't boot comptuer from a USB device==
@@ -47,7 +49,6 @@ Install GNU/Linux  on Notebook is the best!
 
 
 ## Lego EV3
----
 
 > here isn't recommend you to buy Lego EV3 but only recommend for who already have the Lego EV3
 
@@ -80,6 +81,8 @@ If you don't have microSD card for Lego EV3, I recommend you buy 8GB or 16GB mir
 - a USB microSD card reader.
 - a microSD to SD adapter, if the computer has standard SD card slot.
 
+***
+
 ### Wifi dongle for Lego EV3
 
 The Wifi dongle on Lego EV3 is an optional hardware for setup wireless connection between Computer and Lego EV3.
@@ -97,7 +100,7 @@ Some cheap(low cost) Wifi dongle should avoid which don't work on Lego EV3.
 
 | Name | 360 generation 3 | D-Link | BELKIN | mecly | iFast |
 | - | - | - | - |  - |  - |
-| Chip | ? | ? | ? |
+| Chip | ? | ? | rtl8188su | rtl8188su |
 | Work | No(No Linux firmware) | Maybe | Work | No(ev3dev) | No(ev3dev) |
 
 - rtk8188us, the chip is often used in the China Brand cheap Wifi dongle under 3USD.
