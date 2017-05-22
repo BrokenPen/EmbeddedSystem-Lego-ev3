@@ -57,7 +57,7 @@ Only include biref concept of Embedded System.
 - Chapter 5 is set up for Lego Ev3
 - Chapter 6 is talk about sysf, A file system representation of the system's device tree
 - Chapter 7 implement a keyboard control robot with ssh control
-- Chapter 8 is talk about character device of device driver and a simple implement of serial communcaiton
+- Chapter 8 is talk about character device of device driver and a simple implement of serial communication
 - Chapter 9 is talk about mqtt in IoT and a simple implementation of mqtt using python mqtt library
 - Chapter 10 is extra application for ev3dev.
 
