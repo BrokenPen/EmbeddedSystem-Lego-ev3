@@ -98,9 +98,9 @@ Some cheap(low cost) Wifi dongle should avoid which don't work on Lego EV3.
 
 ![](./hardware/15-wifi-adapter.jpg) 
 
-| Name | 360 generation 3 | D-Link | BELKIN | mecly | iFast |
+| Name | 360 generation 3 | D-Link DWL-G122 | BELKIN F5D7050 | MERCURY | iFast |
 | - | - | - | - |  - |  - |
-| Chip | ? | ? | ? | rtl8188su | rtl8188su |
+| Chip | mtk7603 | RT2571W | ISL3887 | rtl8188eus | rtl8188eus |
 | Work | No(No Linux firmware) | Maybe | Work | No(ev3dev) | No(ev3dev) |
 
 - rtk8188us, the chip is often used in the China Brand cheap Wifi dongle under 3USD.
