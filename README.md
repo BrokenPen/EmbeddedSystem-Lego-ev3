@@ -61,8 +61,11 @@ Here I not:
 ## License
 ---
 
-`EmbeddedSystem-Lego-ev3` is licensed under CC0 1.0 Universal. The
+`EmbeddedSystem-Lego-ev3` is licensed under `CC BY-NC 3.0`. The
 the license is available in the `LICENSE` file.
+
+![](https://i.creativecommons.org/l/by-nc/3.0/88x31.png) 
+
 
 ## Contributing
 ---
