@@ -19,8 +19,8 @@ In this md file is talk about how to startup ev3dev.
 
 When you read this document, I assume you already done reading of
 
-- course/operate-system/operate-system.md
-- course/hardware/hardware.md
+- [`course/operate-system.md`](../operate-system.md)
+- [`course/hardware.md`](../hardware.md)
 
 ## prepare flash the microSD for ev3dev
 
@@ -65,7 +65,7 @@ option 2 : use ==dd== utility in ==GNU/Linux==
 
 2). copy ev3dev image url in www.ev3dev.org/downloads/, right click of Download for EV3, select Copy link address
 
-3). use wget in terminal to download ev3dev image, to paste what you copy in clipboard press `CTRL+SHIFT+V` as same time
+3). use `wget` in terminal to download ev3dev image, to paste what you copy in clipboard press `CTRL+SHIFT+V` as same time
 
 use `cd /tmp` switch to `/tmp` directory, so the download file won't keep it after boot
     
@@ -219,15 +219,15 @@ Now enabled
 -->
 ## setup correct network ip in computer
 
-1). open your terminal, type sudo ifconfig usb0 10.42.0.1
+1). open your `terminal`, type `sudo ifconfig usb0 10.42.0.1`
 
      sudo ifconfig usb0 10.42.0.1
      
-troubleshooting, type sudo ifconfig to see usb0, usb1 exist or not
+troubleshooting, type `sudo ifconfig` to see `usb0`, `usb1` exist or not
 
 ## ev3dev connecting to the Internet via usb
 
-code/ev3dev-connecting-to-the-internet/via-usb.sh
+[`code/ev3dev-connecting-to-the-internet/via-usb.sh`](../../code/ev3dev-connecting-to-the-internet/via-usb.sh)
 
 1). 
 
@@ -238,11 +238,11 @@ create a empty file call via-usb.sh in code user code direcotry
     cd code
     touch via-usb.sh
     
-use geany IDE to edit via-usb.sh
+use `geany` IDE to edit `via-usb.sh`
     
     geany via-usb.sh
 
-type the follow code in the file, CRTL+S to save the content, ALT+F4 to quit geany.
+type the follow code in the file, `CRTL+S` to save the content, `ALT+F4` to quit geany.
 
 caution: if computer access Internet via WiFi, change eth0 to wlan0 in line 3.
     
@@ -262,15 +262,17 @@ execute the via-usb.sh with priilage right
 
 ## ev3dev connecting to the Internet via WiFi adapter
 
-code/ev3dev-connecting-to-the-internet/via-wifi-adapter
+`code/ev3dev-connecting-to-the-internet/via-wifi-adapter`
 
 // TODO
 
 1). attach WiFi adapter to ev3-brick USB port, using the ev3dev brick menu config wireless connection
 
-## access ev3dev through ssh
+## Continue
 
-## update ev3dev
+[`./course/embedded-system.md#embedded-system`](../embedded-system.md)
+
+[`./embedded-system/hello-world-ev3dev.md#hello-world-ev3dev`](./hello-world-ev3dev.md)
 
 ## Useful Link
 
