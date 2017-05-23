@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Made with Remarkable!
+  </title>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/github.min.css" rel="stylesheet"/>
+  <style type="text/css">
+   body,table tr{background-color:#fff}table tr td,table tr th{border:1px solid #ccc;text-align:left;padding:6px 13px;margin:0}pre code,table,table tr{padding:0}hr,pre code{background:0 0}body{font:16px Helvetica,Arial,sans-serif;line-height:1.4;color:#333;word-wrap:break-word;padding:10px 15px}strong,table tr th{font-weight:700}h1{font-size:2em;margin:.67em 0;text-align:center}h2{font-size:1.75em}h3{font-size:1.5em}h4{font-size:1.25em}h1,h2,h3,h4,h5,h6{font-weight:700;position:relative;margin-top:15px;margin-bottom:15px;line-height:1.1}h1,h2{border-bottom:1px solid #eee}hr{height:0;margin:15px 0;overflow:hidden;border:0;border-bottom:1px solid #ddd}a{color:#4183C4}a.absent{color:#c00}ol,ul{padding-left:15px;margin-left:5px}ol{list-style-type:lower-roman}table tr{border-top:1px solid #ccc;margin:0}table tr:nth-child(2n){background-color:#aaa}table tr td :first-child,table tr th :first-child{margin-top:0}table tr td:last-child,table tr th :last-child{margin-bottom:0}img{max-width:100%}blockquote{padding:0 15px;border-left:4px solid #ccc}code,tt{margin:0 2px;padding:0 5px;white-space:nowrap;border:1px solid #eaeaea;background-color:#f8f8f8;border-radius:3px}pre code{margin:0;white-space:pre;border:none}.highlight pre,pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}
+  </style>
+ </head>
+ <body>
+  <h1 id="hardware">
+   Hardware
+  </h1>
+  <p>
+   In this section, I only mention about the hardware you may need it.
+  </p>
+  <p>
+   The Software/OS requirement part in the
+   <a href="./operate-system.md#operate-system">
+    <code>
+     course/operate-system/operate-system.md
+    </code>
+   </a>
+   .
+  </p>
+  <h2 id="computer">
+   Computer
+  </h2>
+  <p>
+   The standard computer will be fine,  whether a Desktop or Notebook.
+  </p>
+  <h3 id="copmuter-os">
+   Copmuter OS
+  </h3>
+  <p>
+   Choose the solution that come into your condition.
+  </p>
+  <h4 id="for-the-school-computer-running-windows-os">
+   For the school computer running Windows OS
+  </h4>
+  <h5 id="boot-from-usb">
+   Boot from USB
+  </h5>
+  <p>
+   <mark>
+    Condition : The computer bios is not locked or you can boot computer from a USB device.
+   </mark>
+  </p>
+  <p>
+   To avoid of troubleshooting in Windows OS, such as install Ethernet Driver for Lego EV3, use putty(ssh) remote access Lego EV3(ev3dev), using WinSCP(scp)…
+  </p>
+  <p>
+   Please use a Linux Live USB, due to most school computer might have installed recovery card by the school computer department and also strictly ban student to install software/OS on the computer.
+  </p>
+  <ul>
+   <li>
+    A 4GB Usb Memory Stick will be fine for flash as a Linux Live USB,
+   </li>
+   <li>
+    A 8GB Usb Memory Stick will be better than 4GB Usb Memtory Stick.
+   </li>
+   <li>
+    A 8GB Usb Memory Stick with Wifi compent will be better than above.
+   </li>
+  </ul>
+  <p>
+   The boot menu is always available at comptuer startup screen(the logo), most of the bios boot menu is at F12(keyboard). Prese F12 after you press the power button to boot up the computer to enter boot menu.
+  </p>
+  <hr/>
+  <h5 id="use-virtual-machine">
+   Use virtual machine
+  </h5>
+  <p>
+   <mark>
+    Condition : The computer bios is locked or you can’t boot comptuer from a USB device
+   </mark>
+  </p>
+  <p>
+   Download
+   <a href="https://www.vmware.com/products/player/playerpro-evaluation.html">
+    VMware player
+   </a>
+   ,
+   <a href="https://www.virtualbox.org/wiki/Downloads">
+    Virtual box
+   </a>
+   install into USB memory strick also copy the binary installer into USB memory strick.
+   <br/>
+   Download GNU/Linux distro image.
+   <br/>
+   Install GNU/Linux into virtual machine or using a live GNU/Linux(which not install).
+  </p>
+  <h4 id="for-the-school-computer-running-unix-like-os">
+   For the school computer running Unix-Like OS
+  </h4>
+  <p>
+   Your school is amazing!, go next section -
+   <a href="#lego-ev3">
+    Lego EV3
+   </a>
+   .
+  </p>
+  <h4 id="for-student-are-require-to-take-their-notebook-to-the-class">
+   For student are require to take their Notebook to the class
+  </h4>
+  <p>
+   Use
+   <a href="https://www.vmware.com/products/player/playerpro-evaluation.html">
+    VMware player
+   </a>
+   ,
+   <a href="https://www.virtualbox.org/wiki/Downloads">
+    Virtual box
+   </a>
+   to run GNU/Linux System is fine.
+   <br/>
+   Install GNU/Linux  on Notebook is the best!
+  </p>
+  <h2 id="lego-ev3">
+   Lego EV3
+  </h2>
+  <blockquote>
+   <p>
+    here isn’t recommend you to buy Lego EV3 but only recommend for who already have the Lego EV3
+   </p>
+  </blockquote>
+  <p>
+   <a href="https://shop.lego.com/en-US/LEGO-MINDSTORMS-EV3-31313">
+    Lego mindstorm EV3 (part 31313) 350USD
+   </a>
+  </p>
+  <p>
+   <a href="https://shop.lego.com/en-US/EV3-Rechargeable-DC-Battery-45501">
+    Rechargeable Battery (part 45501) 85USD
+   </a>
+  </p>
+  <h2 id="microsd-card-for-lego-ev3">
+   microSD card for Lego EV3
+  </h2>
+  <p>
+   <img alt="" src="./hardware/10-mircosd_cardslot_usb_reader.jpg"/>
+  </p>
+  <table>
+   <thead>
+    <tr>
+     <th>
+      mircoSD 16GB
+     </th>
+     <th>
+      mircoSD to SD card slot
+     </th>
+     <th>
+      mircoSD usb reader
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+   </tbody>
+  </table>
+  <hr/>
+  <p>
+   a microSD card is indeed to install ev3dev.
+  </p>
+  <p>
+   a quota from :
+   <a href="http://www.ev3dev.org/docs/getting-started/">
+    http://www.ev3dev.org/docs/getting-started/
+   </a>
+  </p>
+  <blockquote>
+   <p>
+    A
+    <a href="https://en.wikipedia.org/wiki/Secure_Digital#SD_.28SDSC.29">
+     microSD
+    </a>
+    or
+    <a href="https://en.wikipedia.org/wiki/Secure_Digital#SDHC">
+     microSDHC
+    </a>
+    card (2GB or larger). microSDXC is not supported on the EV3. All cards larger than 32GB will not work with the EV3!
+   </p>
+  </blockquote>
+  <p>
+   If you don’t have a microSD or microSDHC (2GB to 16GB), read the follow, otherwise skip it.
+  </p>
+  <p>
+   In the 3C market, the mircoSD card of 8GB or 16GB which have higher C/P than the 2GB/4GB mircoSD card, also better storage size for other Single Board Computer to install OS if you wanna try other SBC later on.
+  </p>
+  <p>
+   If you don’t have microSD card for Lego EV3, I recommend you buy 8GB or 16GB mircoSD\microSDHC card.
+  </p>
+  <h3 id="microsd-card-reader">
+   microSD card reader
+  </h3>
+  <ul>
+   <li>
+    a USB microSD card reader.
+   </li>
+   <li>
+    a microSD to SD adapter, if the computer has standard SD card slot.
+   </li>
+  </ul>
+  <hr/>
+  <h3 id="wifi-dongle-for-lego-ev3">
+   Wifi dongle for Lego EV3
+  </h3>
+  <p>
+   The Wifi dongle on Lego EV3 is an optional hardware for setup wireless connection between Computer and Lego EV3.
+  </p>
+  <p>
+   If you already can connect Lego EV3 through Wifi dongle, skip this section!
+  </p>
+  <p>
+   The Wifi dongle work on Lego EV3
+  </p>
+  <ul>
+   <li>
+    Edimax would be fine
+   </li>
+   <li>
+    try what you have that is work and buy as you need
+   </li>
+  </ul>
+  <p>
+   Some cheap(low cost) Wifi dongle should avoid which don’t work on Lego EV3.
+  </p>
+  <p>
+   <img alt="" src="./hardware/15-wifi-adapter.jpg"/>
+  </p>
+  <table>
+   <thead>
+    <tr>
+     <th>
+      Name
+     </th>
+     <th>
+      360 generation 3
+     </th>
+     <th>
+      D-Link DWL-G122
+     </th>
+     <th>
+      BELKIN F5D7050
+     </th>
+     <th>
+      MERCURY
+     </th>
+     <th>
+      iFast
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      Chip
+     </td>
+     <td>
+      mtk7603
+     </td>
+     <td>
+      RT2571W
+     </td>
+     <td>
+      ISL3887
+     </td>
+     <td>
+      rtl8188eus
+     </td>
+     <td>
+      rtl8188eus
+     </td>
+    </tr>
+    <tr>
+     <td>
+      Work
+     </td>
+     <td>
+      No(No Linux firmware)
+     </td>
+     <td>
+      Maybe
+     </td>
+     <td>
+      Work
+     </td>
+     <td>
+      No(ev3dev)
+     </td>
+     <td>
+      No(ev3dev)
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <ul>
+   <li>
+    rtk8188us, the chip is often used in the China Brand cheap Wifi dongle under 3USD.
+   </li>
+   <li>
+    360 generation 3 Wifi dongle, which don’t support Linux, Lego EV3(ev3dev) too.
+   </li>
+  </ul>
+  <!-- ## Reference -->
+  <hr/>
+  <h3 id="useful-link">
+   Useful Link
+  </h3>
+  <p>
+   List of Wi-Fi Device IDs in Linux - WikiDevi
+   <br/>
+   -
+   <a href="https://wikidevi.com/wiki/List_of_Wi-Fi_Device_IDs_in_Linux">
+    https://wikidevi.com/wiki/List_of_Wi-Fi_Device_IDs_in_Linux
+   </a>
+  </p>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js">
+  </script>
+  <script>
+   hljs.initHighlightingOnLoad();
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});
+  </script>
+ </body>
+</html>

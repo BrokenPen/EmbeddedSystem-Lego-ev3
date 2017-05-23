@@ -1,0 +1,350 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Made with Remarkable!
+  </title>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/github.min.css" rel="stylesheet"/>
+  <style type="text/css">
+   body,table tr{background-color:#fff}table tr td,table tr th{border:1px solid #ccc;text-align:left;padding:6px 13px;margin:0}pre code,table,table tr{padding:0}hr,pre code{background:0 0}body{font:16px Helvetica,Arial,sans-serif;line-height:1.4;color:#333;word-wrap:break-word;padding:10px 15px}strong,table tr th{font-weight:700}h1{font-size:2em;margin:.67em 0;text-align:center}h2{font-size:1.75em}h3{font-size:1.5em}h4{font-size:1.25em}h1,h2,h3,h4,h5,h6{font-weight:700;position:relative;margin-top:15px;margin-bottom:15px;line-height:1.1}h1,h2{border-bottom:1px solid #eee}hr{height:0;margin:15px 0;overflow:hidden;border:0;border-bottom:1px solid #ddd}a{color:#4183C4}a.absent{color:#c00}ol,ul{padding-left:15px;margin-left:5px}ol{list-style-type:lower-roman}table tr{border-top:1px solid #ccc;margin:0}table tr:nth-child(2n){background-color:#aaa}table tr td :first-child,table tr th :first-child{margin-top:0}table tr td:last-child,table tr th :last-child{margin-bottom:0}img{max-width:100%}blockquote{padding:0 15px;border-left:4px solid #ccc}code,tt{margin:0 2px;padding:0 5px;white-space:nowrap;border:1px solid #eaeaea;background-color:#f8f8f8;border-radius:3px}pre code{margin:0;white-space:pre;border:none}.highlight pre,pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}
+  </style>
+ </head>
+ <body>
+  <h1 id="sysfs-lego-sensor">
+   sysfs lego sensor
+  </h1>
+  <p>
+   MINDSTORMS Compatible Sensors
+  </p>
+  <h2 id="connect-the-ev3-sensor">
+   connect the ev3 sensor
+  </h2>
+  <table>
+   <thead>
+    <tr>
+     <th>
+      port
+     </th>
+     <th>
+      kernel
+     </th>
+     <th>
+      sensor
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      in1
+     </td>
+     <td>
+      sensor0
+     </td>
+     <td>
+      touch
+     </td>
+    </tr>
+    <tr>
+     <td>
+      in2
+     </td>
+     <td>
+      sensor1
+     </td>
+     <td>
+      gyro
+     </td>
+    </tr>
+    <tr>
+     <td>
+      in3
+     </td>
+     <td>
+      sensor2
+     </td>
+     <td>
+      color
+     </td>
+    </tr>
+    <tr>
+     <td>
+      in4
+     </td>
+     <td>
+      sensor3
+     </td>
+     <td>
+      ultuasound
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <h3 id="listing-current-connected-sensor">
+   listing current connected sensor
+  </h3>
+  <pre><code> cd /sys/class/lego-sensor/
+ ls
+</code></pre>
+  <p>
+   <img alt="" src="./sysfs-lego-sensor/01-connected-sensor.jpg"/>
+   <br/>
+   <img alt="" src="./sysfs-lego-sensor/03-sys-class-lego-sensor.png"/>
+  </p>
+  <hr/>
+  <h3 id="sensor0-touch-sensor">
+   sensor0 - touch sensor
+  </h3>
+  <p>
+   let check  sensor0
+  </p>
+  <pre><code> cd /sys/class/lego-sensor/sensor0
+ ls
+ grep "" *
+</code></pre>
+  <p>
+   <img alt="" src="./sysfs-lego-sensor/07-sys-class-lego-sensor-sensor0-in4-ev3--touch.png"/>
+  </p>
+  <p>
+   arrocding to the
+   <code>
+    driver_name
+   </code>
+   , this sensor is
+   <code>
+    lego-ev3-touch
+   </code>
+   attach on
+   <code>
+    in4
+   </code>
+   , in
+   <code>
+    TOUCH
+   </code>
+   <code>
+    mode
+   </code>
+   as
+   <code>
+    value
+   </code>
+   :
+   <code>
+    0
+   </code>
+   which mean pull up.
+  </p>
+  <hr/>
+  <h3 id="sensor1-gyro-sensor">
+   sensor1 - gyro sensor
+  </h3>
+  <p>
+   let check sensor1
+  </p>
+  <pre><code> cd /sys/class/lego-sensor/sensor1
+ ls
+ grep "" *
+</code></pre>
+  <p>
+   <img alt="" src="./sysfs-lego-sensor/09-sys-class-lego-sensor-sensor1-in3-ev3-gyro.png"/>
+  </p>
+  <p>
+   arrocding to the
+   <code>
+    driver_name
+   </code>
+   , this sensor is
+   <code>
+    lego-ev3-gyro
+   </code>
+   attach on
+   <code>
+    in3
+   </code>
+   , in
+   <code>
+    GYRO-ANG
+   </code>
+   <code>
+    mode
+   </code>
+   as
+   <code>
+    value
+   </code>
+   :
+   <code>
+    -8
+   </code>
+   which mean negative 8 degree.
+  </p>
+  <hr/>
+  <h3 id="sensor2-color-sensor">
+   sensor2 - color sensor
+  </h3>
+  <p>
+   let check sensor2
+  </p>
+  <pre><code> cd /sys/class/lego-sensor/sensor2
+ ls
+ grep "" *
+</code></pre>
+  <p>
+   <img alt="" src="./sysfs-lego-sensor/11-sys-class-lego-sensor-sensor2-ev3-color.png"/>
+  </p>
+  <p>
+   arrocidng to the
+   <code>
+    driver_name
+   </code>
+   , this sensor is
+   <code>
+    lego-ev3-color
+   </code>
+   attach on
+   <code>
+    in2
+   </code>
+   , in
+   <code>
+    COLOR-REFLECT
+   </code>
+   <code>
+    mode
+   </code>
+   as
+   <code>
+    value
+   </code>
+   :
+   <code>
+    1
+   </code>
+   and
+   <code>
+    unit
+   </code>
+   as
+   <code>
+    pict
+   </code>
+  </p>
+  <hr/>
+  <h3 id="sensor3-ultrasound-sensor">
+   sensor3 - ultrasound sensor
+  </h3>
+  <p>
+   let check sensor3
+  </p>
+  <pre><code>cd /sys/class/lego-sensor/sensor3
+ls
+grep "" *
+</code></pre>
+  <p>
+   <img alt="" src="./sysfs-lego-sensor/13-sys-class-lego-sensor-sensor3-ev3-us.png"/>
+  </p>
+  <p>
+   arrocding to the
+   <code>
+    driver_name
+   </code>
+   , this sensor is
+   <code>
+    lego-ev3-us
+   </code>
+   which mean ultrasound sensor attach on
+   <code>
+    in1
+   </code>
+   , in
+   <code>
+    US-DIST-CM
+   </code>
+   <code>
+    mode
+   </code>
+   as
+   <code>
+    value
+   </code>
+   :
+   <code>
+    2550
+   </code>
+   which mean nothing in front of the sensor.
+   <code>
+    2550
+   </code>
+   is the maximum value…
+  </p>
+  <hr/>
+  <h4 id="gyro-sensor">
+   gyro sensor
+  </h4>
+  <p>
+   change gyro sensor in different mode, change to gyro-cal
+  </p>
+  <p>
+   <img alt="" src="./sysfs-lego-sensor/31-sys-class-lego-sensor-gyro-cal.png"/>
+  </p>
+  <p>
+   change mode to gyro-rate
+  </p>
+  <p>
+   <img alt="" src="./sysfs-lego-sensor/33-sys-class-lego-sensor-gyro-rate.png"/>
+  </p>
+  <p>
+   change mode
+  </p>
+  <p>
+   <img alt="" src="./sysfs-lego-sensor/35-sys-class-lego-sensor-gyro-all-01.png"/>
+  </p>
+  <p>
+   <img alt="" src="./sysfs-lego-sensor/37-sys-class-lego-sensor-gyro-all-02.png"/>
+  </p>
+  <h4 id="ultrasound-sensor">
+   ultrasound sensor
+  </h4>
+  <p>
+   <img alt="" src="./sysfs-lego-sensor/53-try-us-sensor-close-smaller-far-larger.png"/>
+  </p>
+  <h4 id="color-sensor">
+   color sensor
+  </h4>
+  <p>
+   <img alt="" src="./sysfs-lego-sensor/61-try-clolr-sensor-col-reflect.png"/>
+  </p>
+  <p>
+   <img alt="" src="./sysfs-lego-sensor/63-try-color-sensor-all.png"/>
+  </p>
+  <h2 id="useful-link">
+   Useful link
+  </h2>
+  <p>
+   <a href="http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-jessie/sensors.html">
+    http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-jessie/sensors.html
+   </a>
+  </p>
+  <p>
+   <a href="http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-jessie/sensors.html#sysfs">
+    http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-jessie/sensors.html#sysfs
+   </a>
+  </p>
+  <hr/>
+  <p>
+   last modified : Saturday, 06. May 2017 06:22PM
+  </p>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js">
+  </script>
+  <script>
+   hljs.initHighlightingOnLoad();
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});
+  </script>
+ </body>
+</html>

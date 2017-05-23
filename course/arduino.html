@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Made with Remarkable!
+  </title>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/github.min.css" rel="stylesheet"/>
+  <style type="text/css">
+   body,table tr{background-color:#fff}table tr td,table tr th{border:1px solid #ccc;text-align:left;padding:6px 13px;margin:0}pre code,table,table tr{padding:0}hr,pre code{background:0 0}body{font:16px Helvetica,Arial,sans-serif;line-height:1.4;color:#333;word-wrap:break-word;padding:10px 15px}strong,table tr th{font-weight:700}h1{font-size:2em;margin:.67em 0;text-align:center}h2{font-size:1.75em}h3{font-size:1.5em}h4{font-size:1.25em}h1,h2,h3,h4,h5,h6{font-weight:700;position:relative;margin-top:15px;margin-bottom:15px;line-height:1.1}h1,h2{border-bottom:1px solid #eee}hr{height:0;margin:15px 0;overflow:hidden;border:0;border-bottom:1px solid #ddd}a{color:#4183C4}a.absent{color:#c00}ol,ul{padding-left:15px;margin-left:5px}ol{list-style-type:lower-roman}table tr{border-top:1px solid #ccc;margin:0}table tr:nth-child(2n){background-color:#aaa}table tr td :first-child,table tr th :first-child{margin-top:0}table tr td:last-child,table tr th :last-child{margin-bottom:0}img{max-width:100%}blockquote{padding:0 15px;border-left:4px solid #ccc}code,tt{margin:0 2px;padding:0 5px;white-space:nowrap;border:1px solid #eaeaea;background-color:#f8f8f8;border-radius:3px}pre code{margin:0;white-space:pre;border:none}.highlight pre,pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}
+  </style>
+ </head>
+ <body>
+  <h1 id="arduino">
+   Arduino
+  </h1>
+  <p>
+   Arduino is an free software for electronics platform usually for MCU or SOC developemnet.
+  </p>
+  <h2 id="installation">
+   Installation
+  </h2>
+  <h3 id="download-arduino">
+   Download arduino
+  </h3>
+  <p>
+   DO :    Download Newest Version Arduino from Arduino official website
+   <br/>
+   DON’T : Use apt-get install arduino # usually don’t work
+  </p>
+  <p>
+   Arduino Official Website :
+   <a href="https://www.arduino.cc/en/Main/Software">
+    https://www.arduino.cc/en/Main/Software
+   </a>
+  </p>
+  <p>
+   <img alt="" src="./arduino/01-download-arduino.png"/>
+  </p>
+  <p>
+   Seem we using ESP8266 develop board instead of Arduino board so Arduino don’t earn any profit from us, please consided to donate to Arduino to thank for the great open soucres work.
+  </p>
+  <p>
+   <img alt="" src="./arduino/03-feel-free-to-donate-or-just-download.png"/>
+  </p>
+  <p>
+   Assuem your follow the step of choose GNU/Linux distro image as using 32bit GNU/Linux OS. So pick the 32bits for download. If amd64 go for Linux 64bits, Linux 32bits on amd64 may not work in my experiences.
+  </p>
+  <p>
+   <img alt="" src="./arduino/04-save-files.png"/>
+  </p>
+  <p>
+   Go to the directory where  contain downloaded arduino file and extract the tar file then run in background.
+  </p>
+  <pre><code>cd ~
+cd Downlaods
+tar -xvf arduino-1.8.2-linux32.tar.xz
+cd arduino-1.8.2
+./arduino &amp;
+</code></pre>
+  <p>
+   <img alt="" src="./arduino/05-extract-and-run.png"/>
+  </p>
+  <p>
+   A basic Arduino program consist two part, a
+   <code>
+    setup()
+   </code>
+   part usually for setup pin configuration, a
+   <code>
+    loop()
+   </code>
+   part is the main part to place the extractly running code, this
+   <code>
+    loop()
+   </code>
+   scope, code will repeat the to run.
+  </p>
+  <p>
+   <img alt="" src="./arduino/06-arduino.png"/>
+  </p>
+  <hr/>
+  <h3 id="arduino-custom-setup-hints">
+   Arduino Custom Setup Hints
+  </h3>
+  <p>
+   Option 1 : Enable the
+   <code>
+    Display line numbers
+   </code>
+   and
+   <code>
+    Enable Code Folding
+   </code>
+   in
+   <code>
+    File
+   </code>
+   -&gt;
+   <code>
+    Preferences
+   </code>
+   could give you better visiual feel when coding.
+  </p>
+  <p>
+   <img alt="" src="./arduino/07-go-preferences.png"/>
+  </p>
+  <p>
+   <img alt="" src="./arduino/08-enable_line_num_code_folding.png"/>
+  </p>
+  <p>
+   <img alt="" src="./arduino/09-new-looking.png"/>
+  </p>
+  <hr/>
+  <p>
+   Option 2 : Enable the
+   <code>
+    Use external editor
+   </code>
+   to use any editor you want
+  </p>
+  <p>
+   use geany as a external editor, the arduino will sync the content while change and save in geany. Keep arduino running need the
+   <code>
+    Verify
+   </code>
+   and
+   <code>
+    Upload
+   </code>
+   functionality.
+  </p>
+  <p>
+   <img alt="" src="./arduino/13-use-external-ide-geany.png"/>
+  </p>
+  <hr/>
+  <h3 id="configure-arduino">
+   Configure Arduino
+  </h3>
+  <pre><code>File-&gt;Preferences-&gt;Additional Boards Manager URLs-&gt;
+
+Copy and Paste the follow link-&gt;OK
+
+http://arduino.esp8266.com/stable/package_esp8266com_index.json
+
+Sketch-&gt;Include Library-&gt;Manager Libraries
+
+Wait for the udpate finish(the bar at bottom)
+
+https://github.com/esp8266/Arduino
+&gt; Boards manager link: http://arduino.esp8266.com/stable/package_esp8266com_index.json
+</code></pre>
+  <hr/>
+  <h3 id="trobuleshooting">
+   trobuleshooting
+  </h3>
+  <p>
+   If your using other GNU/Linux distro except of Debian and already installed with Arduino but the pre-installed one is fail to run. Try remove /usr/bin/arduino and create a new soft link in /usr/bin/ name arduino
+  </p>
+  <p>
+   use
+   <code>
+    which
+   </code>
+   to find where the
+   <code>
+    ardino
+   </code>
+   local at, usr
+   <code>
+    rm -rf
+   </code>
+   delete the old
+   <code>
+    arduino
+   </code>
+   binary file,
+   <code>
+    ln -s
+   </code>
+   create soft link to in /usr/bin as
+  </p>
+  <pre><code>which arduino
+/usr/bin/arduino
+
+sudo rm -rf /usr/bin/arduino
+sudo ln -s ~/Download/Arduino1.8.2/arduino /usr/bin/arduino
+</code></pre>
+  <blockquote>
+   <p>
+    The preinstalled arduino in my parrot with Thinkpad X61s make my window x crash = =, so I remove the /usr/bin/arduino then create a soft link to the downloaded arduino
+   </p>
+  </blockquote>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js">
+  </script>
+  <script>
+   hljs.initHighlightingOnLoad();
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});
+  </script>
+ </body>
+</html>

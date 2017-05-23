@@ -1,0 +1,532 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Made with Remarkable!
+  </title>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/github.min.css" rel="stylesheet"/>
+  <style type="text/css">
+   body,table tr{background-color:#fff}table tr td,table tr th{border:1px solid #ccc;text-align:left;padding:6px 13px;margin:0}pre code,table,table tr{padding:0}hr,pre code{background:0 0}body{font:16px Helvetica,Arial,sans-serif;line-height:1.4;color:#333;word-wrap:break-word;padding:10px 15px}strong,table tr th{font-weight:700}h1{font-size:2em;margin:.67em 0;text-align:center}h2{font-size:1.75em}h3{font-size:1.5em}h4{font-size:1.25em}h1,h2,h3,h4,h5,h6{font-weight:700;position:relative;margin-top:15px;margin-bottom:15px;line-height:1.1}h1,h2{border-bottom:1px solid #eee}hr{height:0;margin:15px 0;overflow:hidden;border:0;border-bottom:1px solid #ddd}a{color:#4183C4}a.absent{color:#c00}ol,ul{padding-left:15px;margin-left:5px}ol{list-style-type:lower-roman}table tr{border-top:1px solid #ccc;margin:0}table tr:nth-child(2n){background-color:#aaa}table tr td :first-child,table tr th :first-child{margin-top:0}table tr td:last-child,table tr th :last-child{margin-bottom:0}img{max-width:100%}blockquote{padding:0 15px;border-left:4px solid #ccc}code,tt{margin:0 2px;padding:0 5px;white-space:nowrap;border:1px solid #eaeaea;background-color:#f8f8f8;border-radius:3px}pre code{margin:0;white-space:pre;border:none}.highlight pre,pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}
+  </style>
+ </head>
+ <body>
+  <!-- for remarkable -->
+  <p>
+   <link href="../../style.css" rel="stylesheet" type="text/css"/>
+  </p>
+  <style type="text/css">
+   img {
+  width: 50%;
+}
+
+img:.ev3-brick {
+  width: 30%;
+}
+  </style>
+  <h1 id="ev3dev">
+   ev3dev
+  </h1>
+  <p>
+   In this md file is talk about how to startup ev3dev.
+  </p>
+  <h2 id="premise">
+   premise
+  </h2>
+  <p>
+   When you read this document, I assume you already done reading of
+  </p>
+  <ul>
+   <li>
+    <a href="../operate-system.md">
+     <code>
+      course/operate-system.md
+     </code>
+    </a>
+   </li>
+   <li>
+    <a href="../hardware.md">
+     <code>
+      course/hardware.md
+     </code>
+    </a>
+   </li>
+  </ul>
+  <h2 id="prepare-flash-the-microsd-for-ev3dev">
+   prepare flash the microSD for ev3dev
+  </h2>
+  <p>
+   option 1 : use
+   <mark>
+    refus
+   </mark>
+   in
+   <mark>
+    Windows
+   </mark>
+  </p>
+  <p>
+   option 2 : use
+   <mark>
+    dd
+   </mark>
+   utility in
+   <mark>
+    GNU/Linux
+   </mark>
+  </p>
+  <h3 id="use-refus-in-windows">
+   use refus in windows
+  </h3>
+  <p>
+   1). download the ev3dev image for LEGO MINDSTORMS EV3 in
+   <a href="http://www.ev3dev.org/downloads/">
+    www.ev3dev.org/downloads/
+   </a>
+  </p>
+  <p>
+   <img alt="" src="ev3dev/01-go-to-ev3dev-downloads.jpg"/>
+  </p>
+  <hr/>
+  <p>
+   2). extract the zip file, assume you download store on desktop
+  </p>
+  <p>
+   <img alt="" src="ev3dev/03-extract-all-to-desktop.jpg"/>
+  </p>
+  <p>
+   3). plug your mircoSD into comptuer, execute rufus.
+  </p>
+  <p>
+   <img alt="" src="ev3dev/09-ev3dev-rufus.PNG"/>
+  </p>
+  <p>
+   4). Change Create a bootable disk using to DD image
+  </p>
+  <p>
+   <img alt="" src="ev3dev/10-ms-dos-to-dd-image.PNG"/>
+  </p>
+  <p>
+   5). Select the ev3dev image by click the dvd-rom icon of left of DD image
+   <br/>
+   <img alt="" src="ev3dev/11-select-the-img.PNG"/>
+  </p>
+  <p>
+   6). Press start, wait until the green bar go 100%
+  </p>
+  <p>
+   <img alt="" src="ev3dev/12-press-start.PNG"/>
+  </p>
+  <hr/>
+  <h3 id="use-dd-utility-in-gnulinux">
+   use dd utility in GNU/Linux
+  </h3>
+  <p>
+   1). open terminal, except of click on
+   <code>
+    Acititcy
+   </code>
+   then type
+   <code>
+    terminal
+   </code>
+   , you also can press
+   <code>
+    ALT+F2
+   </code>
+   then type
+   <code>
+    gnome-terminal
+   </code>
+   to open
+   <code>
+    terminal
+   </code>
+  </p>
+  <p>
+   2). copy ev3dev image url in
+   <a href="http://www.ev3dev.org/downloads/">
+    www.ev3dev.org/downloads/
+   </a>
+   , right click of Download for EV3, select Copy link address
+  </p>
+  <p>
+   3). use
+   <code>
+    wget
+   </code>
+   in terminal to download ev3dev image, to paste what you copy in clipboard press
+   <code>
+    CTRL+SHIFT+V
+   </code>
+   as same time
+  </p>
+  <p>
+   use
+   <code>
+    cd /tmp
+   </code>
+   switch to
+   <code>
+    /tmp
+   </code>
+   directory, so the download file won’t keep it after boot
+  </p>
+  <pre><code>cd /tmp 
+wget https://github.com/ev3dev/ev3dev/releases/download/ev3dev-jessie-2017-02-11/ev3dev-jessie-ev3-generic-2017-02-11.zip
+</code></pre>
+  <p>
+   4). after the download completed, need to
+   <code>
+    unzip
+   </code>
+   the file.
+  </p>
+  <pre><code>unzip ev3dev-jessie-ev3-generic-2017-02-11.zip
+cd ev3dev-jessie-ev3-generic-2017-02-11
+</code></pre>
+  <p>
+   5). plug your mircoSD into sd card slot or by mircoSD USB read to the computer, use
+   <code>
+    sudo fdisk -l
+   </code>
+   to find out which is the USB named.
+  </p>
+  <pre><code>sudo fdisk -l
+</code></pre>
+  <p>
+   in sd card slot case, you see
+   <code>
+    /dev/mmcblk0
+   </code>
+   as follow
+  </p>
+  <pre><code>...
+Disk /dev/mmcblk0: 14.5 GiB, 15523119104 bytes, 30318592 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xfec402a8
+...
+</code></pre>
+  <p>
+   in mircoSD USB reader case, you see
+   <code>
+    /dev/sdx
+   </code>
+   as follow. (x is the letter the device asigned). If using linux live cd is will be
+   <code>
+    /dev/sdc
+   </code>
+  </p>
+  <pre><code>...
+Disk /dev/sdd: 14.5 GiB, 15523119104 bytes, 30318592 sectors
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: dos
+Disk identifier: 0xfec402a8
+...
+</code></pre>
+  <p>
+   6). flash the ev3dev image into the mircoSD card.
+  </p>
+  <pre><code> dd if=ev3dev-jessie-ev3-generic-2017-02-11.img of=/dev/mmcblk0
+</code></pre>
+  <p>
+   7). now type
+   <code>
+    sudo fdisk -l
+   </code>
+   again, you see
+  </p>
+  <pre><code>...
+Device         Boot  Start      End  Sectors  Size Id Type
+/dev/mmcblk0p1        8192   106495    98304   48M  b W95 FAT32
+/dev/mmcblk0p2      106496 30318591 30212096 14.4G 83 Linux
+...
+</code></pre>
+  <hr/>
+  <h2 id="requirement">
+   requirement
+  </h2>
+  <p>
+   as your read as here, I though you already have these.
+  </p>
+  <p>
+   <img alt="" src="ev3-brick/05-requirement.jpg"/>
+  </p>
+  <h2 id="attach-mircosd-into-ev3">
+   attach mircoSD into EV3
+  </h2>
+  <p>
+   1). The mircoSD card slot is locate as left side of EV3 brick
+  </p>
+  <p>
+   <img alt="" class="ev3-brick" src="ev3-brick/07-mircosd-slot.jpg"/>
+  </p>
+  <p>
+   2). insert mircoSD, the front side(logo) of mircoSD face up.
+  </p>
+  <p>
+   <img alt="" class="ev3-brick" src="ev3-brick/08-mircosd-front-on-top.jpg"/>
+  </p>
+  <p>
+   3). connect EV3 brick to computer though USB cable, then press the center key(OK) to boot up EV3 brick. You should see Linux like start up screen.
+  </p>
+  <p>
+   <img alt="" class="ev3-brick" src="ev3-brick/10-attack-battery-usb-poewron.jpg"/>
+  </p>
+  <p>
+   4). ouch, I forget attach the power cable.
+  </p>
+  <p>
+   <img alt="" class="ev3-brick" src="ev3-brick/11-loading-ev3dev.jpg"/>
+  </p>
+  <p>
+   5). ev3dev brick menu
+  </p>
+  <p>
+   <img alt="" class="ev3-brick" src="ev3-brick/15-brick-gui-interface.jpg"/>
+  </p>
+  <h2 id="setup-ev3-network">
+   setup EV3 network
+  </h2>
+  <p>
+   1). Enter Wireless and Networks
+  </p>
+  <p>
+   <img alt="" class="ev3-brick" src="ev3-brick/18-select-wireless-and-networks.jpg"/>
+  </p>
+  <p>
+   2). Enter All Network Connections
+  </p>
+  <!--
+![](ev3-brick/19-wireless-and-networks.jpg) {:.ev3-brick}
+-->
+  <p>
+   <img alt="" class="ev3-brick" src="ev3-brick/20-select-all-network-connections.jpg"/>
+  </p>
+  <p>
+   3). Enter Wired
+  </p>
+  <p>
+   <img alt="" class="ev3-brick" src="ev3-brick/21-enter-wired.jpg"/>
+  </p>
+  <p>
+   4). Enable Connect automatically
+  </p>
+  <p>
+   Default as disable
+  </p>
+  <p>
+   <img alt="" class="ev3-brick" src="ev3-brick/22-select-connect-automatically.jpg"/>
+  </p>
+  <p>
+   Now enabled
+  </p>
+  <p>
+   <img alt="" class="ev3-brick" src="ev3-brick/23-auto-enabled.jpg"/>
+  </p>
+  <p>
+   5). Enter IPv4
+  </p>
+  <p>
+   <img alt="" class="ev3-brick" src="ev3-brick/25-select-ipv4.jpg"/>
+  </p>
+  <p>
+   6). Enter Change…
+  </p>
+  <p>
+   <img alt="" class="ev3-brick" src="ev3-brick/26-change-the-configure.jpg"/>
+  </p>
+  <p>
+   7). Select Load Linux defaults
+  </p>
+  <p>
+   <img alt="" class="ev3-brick" src="ev3-brick/28-local-linux-default.jpg"/>
+  </p>
+  <p>
+   8). The Linux defaults config
+  </p>
+  <p>
+   <img alt="" class="ev3-brick" src="ev3-brick/30-network-interface.jpg"/>
+  </p>
+  <p>
+   9). RETURN, enter DNS
+  </p>
+  <p>
+   <img alt="" class="ev3-brick" src="ev3-brick/33-select-dns.jpg"/>
+  </p>
+  <p>
+   10). Select Add
+  </p>
+  <p>
+   <img alt="" class="ev3-brick" src="ev3-brick/34-add-new-dns.jpg"/>
+  </p>
+  <p>
+   11). OK,
+   <br/>
+   <img alt="" class="ev3-brick" src="ev3-brick/35-enter-new-dns.jpg"/>
+  </p>
+  <p>
+   12). Type in 8.8.8.8, then select OK
+  </p>
+  <p>
+   <img alt="" class="ev3-brick" src="ev3-brick/36-enter-google-dns-8.8.8.8.jpg"/>
+  </p>
+  <p>
+   13). Select Add
+  </p>
+  <p>
+   <img alt="" class="ev3-brick" src="ev3-brick/37-select-add.jpg"/>
+  </p>
+  <!--
+14). Select ENET
+
+![](ev3-brick/40-browsing-enet.jpg) 
+
+15). ENET result
+
+![](ev3-brick/41-enet-result.jpg) 
+-->
+  <h2 id="setup-correct-network-ip-in-computer">
+   setup correct network ip in computer
+  </h2>
+  <p>
+   1). open your
+   <code>
+    terminal
+   </code>
+   , type
+   <code>
+    sudo ifconfig usb0 10.42.0.1
+   </code>
+  </p>
+  <pre><code> sudo ifconfig usb0 10.42.0.1
+</code></pre>
+  <p>
+   troubleshooting, type
+   <code>
+    sudo ifconfig
+   </code>
+   to see
+   <code>
+    usb0
+   </code>
+   ,
+   <code>
+    usb1
+   </code>
+   exist or not
+  </p>
+  <h2 id="ev3dev-connecting-to-the-internet-via-usb">
+   ev3dev connecting to the Internet via usb
+  </h2>
+  <p>
+   <a href="../../code/ev3dev-connecting-to-the-internet/via-usb.sh">
+    <code>
+     code/ev3dev-connecting-to-the-internet/via-usb.sh
+    </code>
+   </a>
+  </p>
+  <p>
+   1).
+  </p>
+  <p>
+   create a empty file call via-usb.sh in code user code direcotry
+  </p>
+  <pre><code>cd ~
+mkdir code
+cd code
+touch via-usb.sh
+</code></pre>
+  <p>
+   use
+   <code>
+    geany
+   </code>
+   IDE to edit
+   <code>
+    via-usb.sh
+   </code>
+  </p>
+  <pre><code>geany via-usb.sh
+</code></pre>
+  <p>
+   type the follow code in the file,
+   <code>
+    CRTL+S
+   </code>
+   to save the content,
+   <code>
+    ALT+F4
+   </code>
+   to quit geany.
+  </p>
+  <p>
+   caution: if computer access Internet via WiFi, change eth0 to wlan0 in line 3.
+  </p>
+  <pre><code>#!/bin/sh
+ifconfig usb0 10.42.0.1
+iptables --table nat --append POSTROUTING --out-interface eth0 -j MASQUERADE
+iptables --append FORWARD --in-interface usb0 -j ACCEPT
+echo 1 &gt; /proc/sys/net/ipv4/ip_forward
+</code></pre>
+  <p>
+   gain execute pressmission to the via-usb.sh
+  </p>
+  <pre><code>chmod +x via-sub.sh
+</code></pre>
+  <p>
+   execute the via-usb.sh with priilage right
+  </p>
+  <pre><code>sudo ./via-sub.sh
+</code></pre>
+  <h2 id="ev3dev-connecting-to-the-internet-via-wifi-adapter">
+   ev3dev connecting to the Internet via WiFi adapter
+  </h2>
+  <p>
+   <code>
+    code/ev3dev-connecting-to-the-internet/via-wifi-adapter
+   </code>
+  </p>
+  <p>
+   // TODO
+  </p>
+  <p>
+   1). attach WiFi adapter to ev3-brick USB port, using the ev3dev brick menu config wireless connection
+  </p>
+  <h2 id="continue">
+   Continue
+  </h2>
+  <p>
+   <a href="../embedded-system.md">
+    <code>
+     ./course/embedded-system.md#embedded-system
+    </code>
+   </a>
+  </p>
+  <p>
+   <a href="./hello-world-ev3dev.md">
+    <code>
+     ./embedded-system/hello-world-ev3dev.md#hello-world-ev3dev
+    </code>
+   </a>
+  </p>
+  <h2 id="useful-link">
+   Useful Link
+  </h2>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js">
+  </script>
+  <script>
+   hljs.initHighlightingOnLoad();
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});
+  </script>
+ </body>
+</html>

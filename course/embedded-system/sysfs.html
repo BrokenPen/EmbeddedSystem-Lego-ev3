@@ -1,0 +1,574 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Made with Remarkable!
+  </title>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/github.min.css" rel="stylesheet"/>
+  <style type="text/css">
+   body,table tr{background-color:#fff}table tr td,table tr th{border:1px solid #ccc;text-align:left;padding:6px 13px;margin:0}pre code,table,table tr{padding:0}hr,pre code{background:0 0}body{font:16px Helvetica,Arial,sans-serif;line-height:1.4;color:#333;word-wrap:break-word;padding:10px 15px}strong,table tr th{font-weight:700}h1{font-size:2em;margin:.67em 0;text-align:center}h2{font-size:1.75em}h3{font-size:1.5em}h4{font-size:1.25em}h1,h2,h3,h4,h5,h6{font-weight:700;position:relative;margin-top:15px;margin-bottom:15px;line-height:1.1}h1,h2{border-bottom:1px solid #eee}hr{height:0;margin:15px 0;overflow:hidden;border:0;border-bottom:1px solid #ddd}a{color:#4183C4}a.absent{color:#c00}ol,ul{padding-left:15px;margin-left:5px}ol{list-style-type:lower-roman}table tr{border-top:1px solid #ccc;margin:0}table tr:nth-child(2n){background-color:#aaa}table tr td :first-child,table tr th :first-child{margin-top:0}table tr td:last-child,table tr th :last-child{margin-bottom:0}img{max-width:100%}blockquote{padding:0 15px;border-left:4px solid #ccc}code,tt{margin:0 2px;padding:0 5px;white-space:nowrap;border:1px solid #eaeaea;background-color:#f8f8f8;border-radius:3px}pre code{margin:0;white-space:pre;border:none}.highlight pre,pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}
+  </style>
+ </head>
+ <body>
+  <style type="text/css">
+   img {  width: 50%; }
+img:.ev3-brick {  width: 30%; }
+  </style>
+  <h1 id="sysfs">
+   sysfs
+  </h1>
+  <p>
+   “
+   <code>
+    sysfs
+   </code>
+   is a pseudo file system provided by the Linux kernel that exports information about various
+   <code>
+    kernel subsystems
+   </code>
+   ,
+   <code>
+    hardware devices
+   </code>
+   , and associated
+   <code>
+    device drivers
+   </code>
+   from the kernel’s device model to user space through virtual files. In addition to providing information about various devices and kernel subsystems, exported virtual files are also used for their configuring.”
+   <a href="">
+    (Wikipedia contributors. Sysfs)
+   </a>
+  </p>
+  <hr/>
+  <h2 id="ev3dev-sysfs">
+   ev3dev sysfs
+  </h2>
+  <p>
+   Let find out what hardware devices available in ev3dev.
+  </p>
+  <pre><code>cd /sys/class
+ls
+</code></pre>
+  <p>
+   <img alt="" src="./sysfs/05-sysfs.png"/>
+  </p>
+  <p>
+   you might have a guest already of what the purpose of these devices by looking throught their name, such as
+   <code>
+    leds
+   </code>
+   ,
+   <code>
+    power_supply
+   </code>
+   ,
+   <code>
+    dc-motor
+   </code>
+   ,
+   <code>
+    tacho-motor
+   </code>
+   ,
+   <code>
+    sound
+   </code>
+   .
+  </p>
+  <table>
+   <thead>
+    <tr>
+     <th>
+      devices
+     </th>
+     <th>
+      function
+     </th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr>
+     <td>
+      <code>
+       leds
+      </code>
+     </td>
+     <td>
+      the EV3 brick LEDs
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <code>
+       power_supply
+      </code>
+     </td>
+     <td>
+      the power supply for EV3, is can be battery “
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <del>
+       <code>
+        dc-motor
+       </code>
+      </del>
+     </td>
+     <td>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <code>
+       tacho-motor
+      </code>
+     </td>
+     <td>
+      the EV3 motor
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <code>
+       sound
+      </code>
+     </td>
+     <td>
+      the EV3 brick sound module
+     </td>
+    </tr>
+   </tbody>
+  </table>
+  <hr/>
+  <h3 id="ev3dev-leds">
+   ev3dev leds
+  </h3>
+  <p>
+   <code>
+    leds
+   </code>
+   to use to control the leds on EV3 brick status LEDs. There are 4 LEDs, 2 green leds and 2 red leds.
+  </p>
+  <pre><code>cd leds 
+ls
+</code></pre>
+  <p>
+   <img alt="" src="./sysfs/07-sysfs-leds-ls.png"/>
+  </p>
+  <p>
+   these
+   <code>
+    leds
+   </code>
+   named come with the
+   <code>
+    left
+   </code>
+   or
+   <code>
+    right
+   </code>
+   position with
+   <code>
+    green
+   </code>
+   or
+   <code>
+    red
+   </code>
+   color.
+  </p>
+  <p>
+   As know some process trigger these leds state, such as showing green for power on, showing red for shutdown.
+  </p>
+  <hr/>
+  <h4 id="ev3dev-led">
+   ev3dev led
+  </h4>
+  <p>
+   let go side, to see what attitude do these leds have.
+  </p>
+  <pre><code>cd ev3:left:green:ev3dev
+ls
+</code></pre>
+  <p>
+   <img alt="" src="./sysfs/09-sysfs-leds-geen.png"/>
+  </p>
+  <p>
+   <code>
+    brightness
+   </code>
+   ,
+   <code>
+    max_brightness
+   </code>
+   ,
+   <code>
+    trigger
+   </code>
+   ,
+   <code>
+    uevent
+   </code>
+   and the remaining is
+   <code>
+    subsystem
+   </code>
+   .
+  </p>
+  <hr/>
+  <p>
+   find out the
+   <code>
+    max_brightness
+   </code>
+   value for led
+   <code>
+    brightness
+   </code>
+   value
+  </p>
+  <pre><code>cat max_brightness
+</code></pre>
+  <p>
+   <img alt="" src="./sysfs/11-sysfs-leds-max-brightness.png"/>
+  </p>
+  <p>
+   Q: why 255?
+   <br/>
+   A: 255 is single-byte unsigned integer maximum value, 11111111 = 255.
+  </p>
+  <hr/>
+  <p>
+   try around
+  </p>
+  <p>
+   let remove default trigger and use timer for trigger for instead.
+  </p>
+  <p>
+   blink led manual using brightness
+  </p>
+  <pre><code>echo none &gt; trigger # no trigger
+echo 0 &gt; brightness # dim led
+sleep 1 # wait for 1 second
+echo 255 &gt; brightness # maximum brightness
+</code></pre>
+  <p>
+   the blink led using timer
+  </p>
+  <pre><code>echo timer &gt; trigger # using timer as trigger
+cat delay_off # output 1000 = 1s
+cat delay_on # output 1000 = 1s
+
+# blink faster
+
+# to edit the delay value
+echo 100 &gt; delay_off # set 0.1s off
+echo 100 &gt; delay_on # set 0.1s on
+</code></pre>
+  <p>
+   <img alt="" src="./sysfs/13-sysfs-leds-play.png"/>
+  </p>
+  <hr/>
+  <p>
+   <a name="programming">
+   </a>
+   <br/>
+   <a name="shell-script">
+   </a>
+  </p>
+  <h3 id="blink-leds-by-shell-script">
+   Blink LEDs by Shell Script
+  </h3>
+  <p>
+   Creating you shell script from following command
+  </p>
+  <pre><code>cd ~/
+nano blinkLEDS.sh # vi blinkLEDS.sh if you wanna use vi for instead
+</code></pre>
+  <p>
+   Type the following content in the school script
+  </p>
+  <p>
+   <code>
+    :
+   </code>
+   need to type as
+   <code>
+    \:
+   </code>
+   use backslash to escape
+   <code>
+    :
+   </code>
+   .
+  </p>
+  <p>
+   <code>
+    code/sysfs/led.sh
+   </code>
+  </p>
+  <pre><code>#!/bin/sh
+LED1=/sys/class/leds/ev3\:left\:green\:ev3dev\brightness
+while true;
+   do 
+   echo "255" &gt; $LED1
+   sleep 1
+   echo "0" &gt; $LED1
+done
+</code></pre>
+  <p>
+   Execute your shell sciprt from following command
+  </p>
+  <pre><code> sh blinkLEDS.sh
+</code></pre>
+  <p>
+   Or, execute the shell script in background from following command, a process ID(PID) should return
+  </p>
+  <pre><code> sh blinkLEDS.sh &amp;
+</code></pre>
+  <p>
+   To end the background shell script of running
+  </p>
+  <pre><code> kill 440 # assume the return PID is 440
+</code></pre>
+  <p>
+   If don’t know PID, use
+   <code>
+    ps
+   </code>
+   to find out the current PID of the shell script is running. Also, use grep the filter the output content of which link contain
+   <code>
+    blinkLEDS.sh
+   </code>
+  </p>
+  <pre><code> ps aux | grep blinkLEDS.sh
+</code></pre>
+  <p>
+   Go kill!!.
+  </p>
+  <hr/>
+  <p>
+   Execute your shell sciprt by defined execute wrapper which is
+   <code>
+    #!/bin/sh
+   </code>
+  </p>
+  <pre><code>chmod +x blinkLEDS.sh # we need to add execute presmission to the blinkLEDS.sh
+</code></pre>
+  <p>
+   Execute the shell script thougth defined execute wrapper.
+  </p>
+  <pre><code>./blinkLEDS.sh
+</code></pre>
+  <hr/>
+  <h3 id="ev3dev-assigment-1">
+   ev3dev assigment 1
+  </h3>
+  <p>
+   Assigment : Blink LEDs in order by Shell Script
+  </p>
+  <ul>
+   <li>
+    LED1 = ev3:left:green:ev3dev
+   </li>
+   <li>
+    LED2 = ev3:left:red:ev3dev
+   </li>
+   <li>
+    LED3 = ev3:right:green:ev3dev
+   </li>
+   <li>
+    <p>
+     LED4 = ev3:right:red:ev3dev
+    </p>
+   </li>
+   <li>
+    <p>
+     LED4 -&gt; LED3 -&gt; LED2 -&gt; LED1 -&gt;
+    </p>
+   </li>
+   <li>
+    LED1 -&gt; LED2 -&gt; LED3 -&gt; LED4
+   </li>
+  </ul>
+  <p>
+   each blink with 1 second dealy, blink is 0.5s on then 0.5s off.
+  </p>
+  <hr/>
+  <p>
+   <a name="c-language">
+   </a>
+  </p>
+  <h3 id="ev3dev-assigment-2">
+   ev3dev assigment 2
+  </h3>
+  <p>
+   Assigment : Blink LEDs in order by C Programming Language
+  </p>
+  <ul>
+   <li>
+    LED1 = ev3:left:green:ev3dev
+   </li>
+   <li>
+    LED2 = ev3:left:red:ev3dev
+   </li>
+   <li>
+    LED3 = ev3:right:green:ev3dev
+   </li>
+   <li>
+    <p>
+     LED4 = ev3:right:red:ev3dev
+    </p>
+   </li>
+   <li>
+    <p>
+     LED4 -&gt; LED3 -&gt; LED2 -&gt; LED1 -&gt;
+    </p>
+   </li>
+   <li>
+    LED1 -&gt; LED2 -&gt; LED3 -&gt; LED4
+   </li>
+  </ul>
+  <p>
+   each blink with 1 second dealy, blink is 0.5s on then 0.5s off.
+  </p>
+  <p>
+   C language program example(
+   <code>
+    code/led.c
+   </code>
+   ) :
+  </p>
+  <pre><code>#include &lt;stdio.h&gt;
+#include &lt;stddef.h&gt;
+#include &lt;time.h&gt;
+
+#define on "255"
+#define off "0"
+
+#define led1 "/sys/class/leds/ev3\:left\:green\:ev3dev\brightness"
+
+void delay(init millseconds) {
+  long pause;
+  clock_t now, then;
+  pause = milliseconds*(CLOCKS_PER_SEC/1000);
+  now = then = clock();
+  while（ （now-then) &lt; pause)
+    now = clock();
+  }
+}
+
+int  main (void) {
+
+  // define file handles for led1
+  FILE *ifp_led1;
+
+  // led1 on
+
+  // make ifp_led1 as writable
+  ifp_led1 = fopen(led1, "w");
+  // fail to oepn
+  if(ifp_led1 == NULL) {printf("Unable to open.\n");}
+  // led1 on
+  fseek(ifp_led1, on, SEEK_SET);
+  // print the state
+  fprintf(ifp_led1, "%s",  on);
+  // flush
+  fflush(ifp_led1);
+  // close files
+  fclose(ifp_led1);
+
+  // waiting for 1 second
+  delay(1000);
+
+  // led1 off
+
+  // make ifp_led1 as writable
+  ifp_led1 = fopen(led1, "w");
+  // fail to oepn
+  if(ifp_led1 == NULL) {printf("Unable to open.\n");}
+  // led1 off
+  fseek(ifp_led1, off, SEEK_SET);
+  // print the state
+  fprintf(ifp_led1, "%s",  on);
+  // flush
+  fflush(ifp_led1);
+  // close files
+  fclose(ifp_led1);
+
+
+  return 0;
+}
+</code></pre>
+  <p>
+   compile the c code and run
+  </p>
+  <pre><code>gcc led.c -o led
+chmod +x led
+./led
+</code></pre>
+  <hr/>
+  <h2 id="reference-link">
+   Reference Link
+  </h2>
+  <ul>
+   <li>
+    <p>
+     Wikipedia contributors. Sysfs [Internet]. Wikipedia, The Free Encyclopedia; 2017 Mar 21, 13:09 UTC [cited 2017 May 2]. Available from:
+     <a href="https://en.wikipedia.org/w/index.php?title=Sysfs&amp;oldid=771424022">
+      https://en.wikipedia.org/w/index.php?title=Sysfs&amp;oldid=771424022
+     </a>
+     .
+    </p>
+   </li>
+   <li>
+    <p>
+     LEGO MINDSTORMS EV3 — ev3dev-jessie Linux kernel drivers 19 documentation, LEDS
+     <br/>
+     <a href="http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-jessie/ev3.html#leds">
+      http://docs.ev3dev.org/projects/lego-linux-drivers/en/ev3dev-jessie/ev3.html#leds
+     </a>
+    </p>
+   </li>
+   <li>
+    <p>
+     ntcu 105-1 embedded-system/ Lab03-Toggle user LED on the Beaglebone.pdf
+    </p>
+   </li>
+  </ul>
+  <h2 id="useful-link">
+   Useful Link
+  </h2>
+  <ul>
+   <li>
+    <p>
+     Tutorial: How to use libudev and Sysfs in Linux
+     <br/>
+     <a href="http://www.signal11.us/oss/udev/">
+      http://www.signal11.us/oss/udev/
+     </a>
+    </p>
+   </li>
+   <li>
+    <p>
+     <a href="https://www.kernel.org/doc/Documentation/leds/ledtrig-transient.txt">
+      https://www.kernel.org/doc/Documentation/leds/ledtrig-transient.txt
+     </a>
+    </p>
+   </li>
+  </ul>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js">
+  </script>
+  <script>
+   hljs.initHighlightingOnLoad();
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});
+  </script>
+ </body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Made with Remarkable!
+  </title>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/github.min.css" rel="stylesheet"/>
+  <style type="text/css">
+   body,table tr{background-color:#fff}table tr td,table tr th{border:1px solid #ccc;text-align:left;padding:6px 13px;margin:0}pre code,table,table tr{padding:0}hr,pre code{background:0 0}body{font:16px Helvetica,Arial,sans-serif;line-height:1.4;color:#333;word-wrap:break-word;padding:10px 15px}strong,table tr th{font-weight:700}h1{font-size:2em;margin:.67em 0;text-align:center}h2{font-size:1.75em}h3{font-size:1.5em}h4{font-size:1.25em}h1,h2,h3,h4,h5,h6{font-weight:700;position:relative;margin-top:15px;margin-bottom:15px;line-height:1.1}h1,h2{border-bottom:1px solid #eee}hr{height:0;margin:15px 0;overflow:hidden;border:0;border-bottom:1px solid #ddd}a{color:#4183C4}a.absent{color:#c00}ol,ul{padding-left:15px;margin-left:5px}ol{list-style-type:lower-roman}table tr{border-top:1px solid #ccc;margin:0}table tr:nth-child(2n){background-color:#aaa}table tr td :first-child,table tr th :first-child{margin-top:0}table tr td:last-child,table tr th :last-child{margin-bottom:0}img{max-width:100%}blockquote{padding:0 15px;border-left:4px solid #ccc}code,tt{margin:0 2px;padding:0 5px;white-space:nowrap;border:1px solid #eaeaea;background-color:#f8f8f8;border-radius:3px}pre code{margin:0;white-space:pre;border:none}.highlight pre,pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}
+  </style>
+ </head>
+ <body>
+  <h1 id="operate-system">
+   Operate System
+  </h1>
+  <p>
+   In this section,  memtion about the OS use in this course.
+  </p>
+  <h2 id="prepare-os">
+   Prepare OS
+  </h2>
+  <hr/>
+  <h3 id="chosing-gnulinux-distros">
+   Chosing GNU/Linux distros
+  </h3>
+  <hr/>
+  <!--
+In this course will be using `linuxminit-18.1-cinamon-32bit.iso`
+
+Downlaod `linuxminit-18.1-cinamon-32bit.iso` in https://www.linuxmint.com/edition.php?id=226 , in the `Download mirrors` section select `COUNTRY` `World` `MIRROR` `EvoWise CDN` will be fine.
+-->
+  <p>
+   Download Debian
+   <mark>
+    Live CD
+   </mark>
+   <code>
+    debian-live-8.7.1-i386-gnome-desktop.iso
+   </code>
+   in
+   <a href="http://cdimage.debian.org/debian-cd/current-live/i386/iso-hybrid/">
+    http://cdimage.debian.org/debian-cd/current-live/i386/iso-hybrid/
+   </a>
+  </p>
+  <p>
+   <mark>
+    If you wanna to install Debian
+   </mark>
+   in the computer you can download install image in
+   <a href="http://cdimage.debian.org/debian-cd/current/">
+    http://cdimage.debian.org/debian-cd/current/
+   </a>
+   , image in
+   <code>
+    amd64
+   </code>
+   is for 64bit(x86_64) machine, iamge in
+   <code>
+    i386
+   </code>
+   is for 32bit(x86) machine which for old computer.
+  </p>
+  <p>
+   The release version may not same when your download but that is ok.
+  </p>
+  <h3 id="prepare-ev3dev">
+   Prepare ev3dev
+  </h3>
+  <hr/>
+  <p>
+   Download
+   <code>
+    ev3dev-jessie-ev3-generic-2017-02-11.zip
+   </code>
+   in
+   <a href="http://www.ev3dev.org/downloads/">
+    http://www.ev3dev.org/downloads/
+   </a>
+   by clicking LEGO MINDSTORMS EV3 section
+   <code>
+    Download for EV3(211MiB)
+   </code>
+  </p>
+  <p>
+   The release version may not same when your download but that is ok.
+  </p>
+  <h3 id="prepare-rufus">
+   Prepare Rufus
+  </h3>
+  <p>
+   Download create bootable USB drives software
+   <code>
+    rufus-2.14.exe
+   </code>
+   in
+   <a href="https://rufus.akeo.ie/">
+    https://rufus.akeo.ie/
+   </a>
+   <code>
+    Download
+   </code>
+   section,
+   <code>
+    Rufus 2.14
+   </code>
+   or
+   <code>
+    Rufus 2.14 Portable
+   </code>
+   both is ok.
+  </p>
+  <p>
+   The release version may not same when your download but that is ok.
+  </p>
+  <h3 id="demo">
+   Demo
+  </h3>
+  <p>
+   Here is snapshot of demo of prepare these OS
+  </p>
+  <p>
+   Option 1:
+   <a href="./bootable-usb.md">
+    To create bootable Linux USB
+   </a>
+  </p>
+  <blockquote>
+   <p>
+    for the school’s comptuer whather installed recovery card but didn’t lock the bios boot menu.
+   </p>
+  </blockquote>
+  <p>
+   Option 2:
+   <a href="./virtualbox.md">
+    Use VirtualBox to run Linux
+   </a>
+  </p>
+  <blockquote>
+   <p>
+    for the schol’s computer only can boot into the OS that installed
+   </p>
+  </blockquote>
+  <h4 id="_1">
+  </h4>
+  <!--
+> For the tutor who use VirtualBox to run Linuxmint Live CD, in Create Virtual Machine step, version use Ubuntu (64-bit) or Ubuntu (32-bit), other may not work.
+-->
+  <h2 id="useful-link">
+   Useful Link
+  </h2>
+  <hr/>
+  <p>
+   GNU : Explaining Why We Don’t Endorse Other Systems
+   <br/>
+   <a href="https://www.gnu.org/distros/common-distros.en.html">
+    https://www.gnu.org/distros/common-distros.en.html
+   </a>
+  </p>
+  <p>
+   Wikipedia : List of LInux distributions
+   <br/>
+   <a href="https://en.wikipedia.org/wiki/List_of_Linux_distributions">
+    https://en.wikipedia.org/wiki/List_of_Linux_distributions
+   </a>
+  </p>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js">
+  </script>
+  <script>
+   hljs.initHighlightingOnLoad();
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});
+  </script>
+ </body>
+</html>

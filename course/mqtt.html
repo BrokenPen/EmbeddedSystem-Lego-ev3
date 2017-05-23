@@ -1,0 +1,435 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Made with Remarkable!
+  </title>
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/styles/github.min.css" rel="stylesheet"/>
+  <style type="text/css">
+   body,table tr{background-color:#fff}table tr td,table tr th{border:1px solid #ccc;text-align:left;padding:6px 13px;margin:0}pre code,table,table tr{padding:0}hr,pre code{background:0 0}body{font:16px Helvetica,Arial,sans-serif;line-height:1.4;color:#333;word-wrap:break-word;padding:10px 15px}strong,table tr th{font-weight:700}h1{font-size:2em;margin:.67em 0;text-align:center}h2{font-size:1.75em}h3{font-size:1.5em}h4{font-size:1.25em}h1,h2,h3,h4,h5,h6{font-weight:700;position:relative;margin-top:15px;margin-bottom:15px;line-height:1.1}h1,h2{border-bottom:1px solid #eee}hr{height:0;margin:15px 0;overflow:hidden;border:0;border-bottom:1px solid #ddd}a{color:#4183C4}a.absent{color:#c00}ol,ul{padding-left:15px;margin-left:5px}ol{list-style-type:lower-roman}table tr{border-top:1px solid #ccc;margin:0}table tr:nth-child(2n){background-color:#aaa}table tr td :first-child,table tr th :first-child{margin-top:0}table tr td:last-child,table tr th :last-child{margin-bottom:0}img{max-width:100%}blockquote{padding:0 15px;border-left:4px solid #ccc}code,tt{margin:0 2px;padding:0 5px;white-space:nowrap;border:1px solid #eaeaea;background-color:#f8f8f8;border-radius:3px}pre code{margin:0;white-space:pre;border:none}.highlight pre,pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}
+  </style>
+ </head>
+ <body>
+  <h1 id="mqtt">
+   mqtt
+  </h1>
+  <p>
+   MQTT stands for MQ Telemetry Transport. It is a publish/subscribe, extremely simple and lightweight messaging protocol, designed for constrained devices and low-bandwidth, high-latency or unreliable networks.
+   <a href="">
+    (mqtt org . What is MQTT)
+   </a>
+  </p>
+  <!--
+### for the current state only installed= = not confige yet , ..
+-->
+  <h2 id="installation">
+   installation
+  </h2>
+  <ul>
+   <li>
+    install open source mqtt broker :
+    <code>
+     mosquitto
+    </code>
+   </li>
+   <li>
+    install open source mqtt client :
+    <code>
+     mosquitto-clients
+    </code>
+    for testing
+   </li>
+   <li>
+    install python mqtt library :
+    <code>
+     paho-mqtt
+    </code>
+   </li>
+  </ul>
+  <h2 id="premise">
+   premise
+  </h2>
+  <p>
+   assume you have run before
+  </p>
+  <pre><code>sudo apt-get update -y &amp; sudo apt full-upgarde -y
+</code></pre>
+  <h2 id="install-mqtt-broker">
+   install mqtt broker
+  </h2>
+  <pre><code>  ssh robot@10.42.0.3
+  sudo adduser mosquitto
+  # type mosquitto as password for mosquitto, keep remaining field empty by pressing enter for Y
+  sudo apt-get install mosquitto mosquitto-clients -y
+  sudo apt-get install build-essential libwrap0-dev libssl-dev libc-ares-dev uuid-dev xsltproc -y
+</code></pre>
+  <h2 id="confige-mqtt">
+   confige mqtt
+  </h2>
+  <pre><code># -c, overwrite existing files, I just dont use it
+# just make sure your pwfile is empty
+</code></pre>
+  <p>
+   Create mqtt client for connect mosquitto
+  </p>
+  <pre><code>sudo su
+mkdir /etc/mosquitto
+echo "" &gt; /etc/mosquitto/pwfile
+sudo mosquitto_passwd /etc/mosquitto/pwfile ev3
+# password : formosa
+
+sudo mosquitto_passwd  /etc/mosquitto/pwfile test
+# password : formosa
+
+sudo mkdir /var/lib/mosquitto/
+sudo chown mosquitto:mosquitto /var/lib/mosquitto/ -R
+</code></pre>
+  <p>
+   Configuration local
+  </p>
+  <pre><code>cd /etc/mosquitto
+sudo cat mosquitto.conf
+# First line
+# Place your local configuration in /etc/mosquitto/conf.d/
+</code></pre>
+  <p>
+   Way to confige mosquitto
+  </p>
+  <pre><code>cd /etc/mosquitto/conf.d
+ls
+# README
+cat README
+# Any files placed in this directory that have a .conf ending will be loaded as config files by the broker. Use this to make your local config.
+man mosquitto.conf
+
+# Let use the example text that I found in digitalocean.com
+# https://www.digitalocean.com/community/questions/how-to-setup-a-mosquitto-mqtt-server-and-receive-data-from-owntracks
+
+# confige mosquitto mqtt broker
+
+sudo nano /etc/mosquitto/conf.d/mosquitto.conf
+</code></pre>
+  <p>
+   Copy and Paste the follow content
+  </p>
+  <pre><code>listener 1883 *
+persistence true
+persistence_location /var/lib/mosquitto/
+persistence_file mosquitto.db
+log_dest syslog
+log_dest stdout
+log_dest topic
+log_type error
+log_type warning
+log_type notice
+log_type information
+connection_messages true
+log_timestamp true
+allow_anonymous true
+password_file /etc/mosquitto/pwfile
+</code></pre>
+  <p>
+   Reset mosquitto service
+  </p>
+  <pre><code>sudo /sbin/ldconfig
+sudo service mosquitto restart
+sudo update-rc.d mosquitto enable
+</code></pre>
+  <p>
+   Start mosquitto, make sure is started
+  </p>
+  <pre><code>sudo mosquitto
+</code></pre>
+  <hr/>
+  <h2 id="simple-test-mosquitto">
+   simple test mosquitto
+  </h2>
+  <p>
+   you need two terminal to run subsriber and publisher side
+  </p>
+  <pre><code>ssh robot@10.42.0.3
+sudo su root
+</code></pre>
+  <p>
+   simple test with authoration
+  </p>
+  <h3 id="mqtt-annmoymos-connect">
+   mqtt annmoymos connect
+  </h3>
+  <p>
+   terminal 1 :
+  </p>
+  <pre><code>sudo mosquitto
+</code></pre>
+  <p>
+   Result :
+  </p>
+  <pre><code>1494404200: mosquitto version 1.3.4 (build date 2014-08-17 04:02:48+0000) starting
+1494404200: Using default config.
+1494404200: Opening ipv4 listen socket on port 1883.
+1494404200: Opening ipv6 listen socket on port 1883.
+1494404200: Warning: Address family not supported by protocol
+</code></pre>
+  <p>
+   terminal 2 :
+  </p>
+  <pre><code>sudo mosquitto_sub -h 10.42.0.3 -p 1883 -t hello/world -d
+</code></pre>
+  <p>
+   Result :
+  </p>
+  <pre><code>Client mosqsub/1365-ev3dev sending CONNECT
+Client mosqsub/1365-ev3dev received CONNACK
+Client mosqsub/1365-ev3dev sending SUBSCRIBE (Mid: 1, Topic: hello/world, QoS: 0)
+Client mosqsub/1365-ev3dev received SUBACK
+Subscribed (mid: 1): 0
+</code></pre>
+  <hr/>
+  <p>
+   terminal 3 :
+  </p>
+  <pre><code>sudo mosquitto_pub -h 10.42.0.3 -p 1883 -d -t hello/world -m "hello"
+</code></pre>
+  <p>
+   Result :
+  </p>
+  <pre><code>Client mosqpub/1367-ev3dev sending CONNECT
+Client mosqpub/1367-ev3dev received CONNACK
+Client mosqpub/1367-ev3dev sending PUBLISH (d0, q0, r0, m1, 'hello/world', ... (5 bytes))
+Client mosqpub/1367-ev3dev sending DISCONNECT
+</code></pre>
+  <p>
+   terminal 2 Result :
+  </p>
+  <pre><code>Client mosqsub/1365-ev3dev received PUBLISH (d0, q0, r0, m0, 'hello/world', ... (5 bytes))
+hello
+</code></pre>
+  <p>
+   terminal 1 Result :
+  </p>
+  <pre><code>...
+1494404376: New connection from 10.42.0.3 on port 1883.
+1494404376: New client connected from 10.42.0.3 as mosqsub/1404-ev3dev (c1, k60).
+1494404387: New connection from 10.42.0.3 on port 1883.
+1494404387: New client connected from 10.42.0.3 as mosqpub/1405-ev3dev (c1, k60)
+...
+</code></pre>
+  <hr/>
+  <h3 id="mqtt-auth-connect">
+   mqtt auth connect
+  </h3>
+  <p>
+   use username and password to connect
+  </p>
+  <p>
+   terminal 2 :
+  </p>
+  <pre><code>mosquitto_sub -h 10.42.0.3 -p 1883 -t hello/world -d -u ev3 -P formosa
+</code></pre>
+  <p>
+   Result :
+  </p>
+  <pre><code>Client mosqsub/600-ev3dev sending CONNECT
+Client mosqsub/600-ev3dev received CONNACK
+Client mosqsub/600-ev3dev sending SUBSCRIBE (Mid: 1, Topic: hello/world, QoS: 0)
+Client mosqsub/600-ev3dev received SUBACK
+Subscribed (mid: 1): 0
+</code></pre>
+  <hr/>
+  <p>
+   terminal 3 :
+  </p>
+  <pre><code>mosquitto_pub -h 10.42.0.3 -p 1883 -d -t hello/world -m "hello" -u test -P formosa
+</code></pre>
+  <p>
+   Result :
+  </p>
+  <pre><code>Client mosqpub/617-ev3dev sending CONNECT
+Client mosqpub/617-ev3dev received CONNACK
+Client mosqpub/617-ev3dev sending PUBLISH (d0, q0, r0, m1, 'hello/world', ... (5 bytes))
+Client mosqpub/617-ev3dev sending DISCONNECT
+</code></pre>
+  <p>
+   terminal 1 result :
+  </p>
+  <pre><code>...
+1494407699: New connection from 10.42.0.3 on port 1883.
+1494407699: New client connected from 10.42.0.3 as mosqsub/600-ev3dev (c1, k60, uev3).
+1494407739: New connection from 10.42.0.3 on port 1883.
+1494407739: New client connected from 10.42.0.3 as mosqpub/617-ev3dev (c1, k60, utest).
+...
+</code></pre>
+  <hr/>
+  <h3 id="troubleshooting">
+   troubleshooting
+  </h3>
+  <p>
+   Result
+  </p>
+  <pre><code>Error: Connection refused
+</code></pre>
+  <p>
+   Solution : Make sure the mosquitto broker is started!
+  </p>
+  <pre><code>sudo mosquitto
+</code></pre>
+  <h3 id="python-mqtt-library">
+   python mqtt library
+  </h3>
+  <pre><code>sudo apt-get install python3-pip  -y # pip ulitily
+sudo pip3 install paho-mqtt
+</code></pre>
+  <h3 id="python-mqtt-publisher">
+   python mqtt publisher
+  </h3>
+  <pre><code>#!/usr/bin/env python3
+# import mqtt library
+import paho.mqtt.client as mqtt
+
+# This is the Publisher
+client = mqtt.Client()
+
+# connect to localhost /etc/hosts, ev3 self
+client.connect("localhost",1883,60)
+
+# public Hello world to class/ev3dev
+client.publish("class/ev3dev", "Hello world!");
+
+# after published the messenage, disconnect from the mqtt broker
+client.disconnect();
+</code></pre>
+  <h3 id="python-mqtt-subsriber">
+   python mqtt subsriber
+  </h3>
+  <p>
+   in python mqtt subsriber we need to implement on_connect and on_message function of mqtt.Client
+  </p>
+  <pre><code>#!/usr/bin/env python3
+# import mqtt library
+import paho.mqtt.client as mqtt
+
+# This is the Subscriber
+
+
+def on_connect(client, userdata, flags, rc):
+   # conver the connect result into string and print it
+   print("Connected with result code "+str(rc))
+   # subscribed after connect to mqtt broker
+   client.subscribe("class/ev3dev")
+
+def on_message(client, userdata, msg):
+   # conver the messenage payload part to string and print it out
+   print(msg.topic+" "+str(msg.payload))
+
+
+client = mqtt.Client()
+
+# connect to localhost mqtt broker, ev3dev self
+client.connect("localhost",1883,60)
+
+# assign callback function
+client.on_connect = on_connect
+client.on_message = on_message
+
+# run the subscriber forever
+client.loop_forever()
+</code></pre>
+  <h3 id="python-mqtt-keep-publish-data-forever">
+   python mqtt keep publish data forever
+  </h3>
+  <p>
+   In the above of python mqtt publisher example, only publish “Hello World” one time. To keep publish data in a short period or after a event/value changed, in  case publish more than one, simply add a while loop in python main part
+  </p>
+  <pre><code>#!/usr/bin/env python3
+
+import paho.mqtt.client as mqtt
+# need some delay for each publish
+improt sleep
+
+# This is the Publisher
+client = mqtt.Client()
+
+# connect to localhost /etc/hosts, ev3 self
+client.connect("localhost",1883,60)
+
+# a variable to count how many time published
+counter = 0
+
+# while loop
+while True: 
+   # public Hello world to class/ev3dev
+   client.publish("class/ev3dev", "Hello world!");
+
+   # increase counter and print 
+   counter+=1
+   print("publish count : ", str(counter))
+
+   # wait 5 seconds
+   sleep(5)
+
+# never reach here
+client.disconnect();
+</code></pre>
+  <h3 id="python-mqtt-event-driven">
+   python mqtt event driven
+  </h3>
+  <p>
+   in this case, we want to after a value changed or a event trigger actived then publish messenage to mqtt broker. Simpley use a if condition in a while loop
+  </p>
+  <pre><code>while True:
+    if ts.value == 1 :
+      client.publish("class/ev3dev/button", "button pressed")
+      sleep(0.5)
+</code></pre>
+  <h3 id="assigment-1">
+   assigment 1
+  </h3>
+  <p>
+   write two program, python mqtt subsriber and publisher program while sensor value is changed, publish some info.
+  </p>
+  <h3 id="assgiment-2">
+   assgiment 2
+  </h3>
+  <p>
+   require : esp8266 lesson
+  </p>
+  <p>
+   write two or more program, use esp8266(NodeMCU) to connect more sensor, when trigger is actived, ask esp8266 for data then puslibhs to mqtt broker.
+  </p>
+  <h2 id="reference-link">
+   reference link
+  </h2>
+  <ul>
+   <li>
+    FAQ - Frequently Asked Questions | MQTT. MQTT.ORG. [accessed 2017 May 6].
+    <a href="http://mqtt.org/faq">
+     http://mqtt.org/faq
+    </a>
+    <br/>
+    What is MQTT?
+   </li>
+  </ul>
+  <h2 id="useful-link">
+   Useful link
+  </h2>
+  <ul>
+   <li>
+    paho-mqtt 1.2.3 : Python Package Index. paho-mqtt 1.2.3 : Python Package Index. [accessed 2017 May 6].
+    <a href="https://pypi.python.org/pypi/paho-mqtt/1.2.3">
+     https://pypi.python.org/pypi/paho-mqtt/1.2.3
+    </a>
+   </li>
+  </ul>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.1/highlight.min.js">
+  </script>
+  <script>
+   hljs.initHighlightingOnLoad();
+  </script>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+  </script>
+  <script type="text/javascript">
+   MathJax.Hub.Config({"showProcessingMessages" : false,"messageStyle" : "none","tex2jax": { inlineMath: [ [ "$", "$" ] ] }});
+  </script>
+ </body>
+</html>
